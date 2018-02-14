@@ -273,9 +273,7 @@ T - tag prefix
  load-prefer-newer t
  make-backup-files nil
  read-buffer-completion-ignore-case t
- ring-bell-function #'ignore
- user-full-name "Michael Wiseman"
- user-mail-address "thestarslookdown@gmail.com")
+ ring-bell-function #'ignore)
 (setq-default
  c-basic-offset 4
  fill-column 80
