@@ -1,0 +1,27 @@
+# Set the prompt
+
+# set prompt="[%n@%m %~] %# "
+# set prompt="[%n@%m %{\033[32m%}%~%{\033[0m%}] %B%#%b "
+set prompt='\
+%B%n%b@%m [%{\033[32m%}%~%{\033[0m%}] %p %d %W/%D/%Y \
+%# '
+
+# General settings
+set filec
+set autolist
+set autocorrect
+set autoexpand
+set color
+set colorcat
+set complete=enhance
+set correct=all
+set echo_style=both
+set inputmode=insert
+set noclobber
+set rmstar
+set history=10000
+set histdup=erase
+set savehist=(10000 merge)
+
+# Aliases
+alias ls "ls --color"
