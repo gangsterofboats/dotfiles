@@ -1,66 +1,68 @@
-" No Vi mode
+" No Vi compatibility (must be set first)
 set nocompatible
-set cpo=""
+set cpoptions=""
 
-" Enable filetype plugins
-filetype indent plugin on
+" Enable syntax highlighting
+syntax enable
+filetype plugin indent on
 
 " Read outside changes
 set autoread
 
-" Autocomplete
+" Enable command-line completion
 set wildmenu
 set wildmode=list:longest
 
+" Status bar settings 
+set laststatus=2
 set ruler
+set showcmd
+
+" Search settings
 set incsearch
 set smartcase
-set magic
 
-" No error bells or blinks
-set noerrorbells
-set novisualbell
-set t_vb=
-
-syntax enable
-
+" File settings
 set encoding=utf8
-set ff=unix
-set ffs=unix,dos,mac
+set fileformat=unix
+set fileformats=unix,dos,mac
 
-set nobackup
+" Backup file settings
 set writebackup
 set noswapfile
 
+" Indent settings
 set expandtab
 set smarttab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
+set autoindent
+set smartindent
 
-set ai
-set si
+" Set line numbers
+set number
 
-set laststatus=2
-set nu
-
-set gfn=Consolas\ 12
+" GUI settings
+set guifont=Consolas\ 12
 colorscheme moonfly
 set lines=30 columns=100
+set titlestring=%t\ -\ Vim
+set linespace=0
 
 " Move directory to match current file
 set browsedir=buffer
 set autochdir
 
-" Set title string
-set titlestring=%t\ -\ Vim
-
+" Keymaps
 map Y y$
+
+" Other settings
 set backspace=indent,eol,start
-set lsp=0
-set nolz
-set scrolloff=3
-set sm
-set viminfo+=!
-set whichwrap+=<,>,h,l,[,]
+set nolazyredraw
+set scrolloff=5
+set showmatch
 set textwidth=80
+set history=1000
+packadd! matchit
+set hidden
