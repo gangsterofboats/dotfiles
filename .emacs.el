@@ -162,7 +162,6 @@
  initial-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  default-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  frame-title-format '("" "%b - Emacs " emacs-version)
-
  gc-cons-threshold (* 100 1024 1024)
  inhibit-startup-screen t
  load-prefer-newer t
