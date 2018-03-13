@@ -1,8 +1,5 @@
 ;;; Requires
 
-;; (require 'dired+)
-;; (require 'ls-lisp+)
-
 ;; (require 'view)
 ;; (global-set-key (kbd "C-x C-q") #'view-mode)
 
@@ -34,10 +31,6 @@
 (setq use-package-always-ensure t)
 
 (use-package alchemist)
-;; (use-package amx
-             ;; :defer nil
-             ;; :config (amx-mode t)
-             ;; :bind ("M-A" . amx-major-mode-commands))
 (use-package crystal-mode)
 (use-package d-mode)
 (use-package emmet-mode
@@ -81,8 +74,7 @@
 (use-package racket-mode)
 (use-package rainbow-mode)
 (use-package smart-mode-line
-             :init
-             (add-hook 'after-init-hook #'sml/setup))
+             :init (add-hook 'after-init-hook #'sml/setup))
 (use-package smartparens
              :config (smartparens-global-mode t))
 (use-package yascroll
@@ -92,6 +84,17 @@
              (setq yascroll:delay-to-hide nil))
 (use-package yasnippet
              :bind ("C-^" . yas-global-mode))
+
+;; Local packages
+(use-package arc
+  :load-path "lisp/")
+(use-package dired+
+  :load-path "lisp/"
+  :init (setq diredp-hide-details-initially-flag nil))
+(use-package ls-lisp+
+  :load-path "lisp/")
+(use-package smalltalk-mode
+  :load-path "lisp/")
 
 ;;; Settings
 
@@ -134,6 +137,8 @@
 (global-set-key (kbd "C-'") #'comment-line)
 (global-set-key (kbd "C-|") #'comment-box)
 (global-set-key (kbd "M-!") #'shell-command)
+(global-set-key (kbd "C-x C-d") #'dired) ; Switch these two.  Given buffer list keybindings, makes more sense
+(global-set-key (kbd "C-x d") #'list-directory)
 
 ;; (if (eq system-type 'windows-nt)
     ;; (progn
@@ -157,7 +162,7 @@
  initial-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  default-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  frame-title-format '("" "%b - Emacs " emacs-version)
- diredp-hide-details-initially-flag nil
+
  gc-cons-threshold (* 100 1024 1024)
  inhibit-startup-screen t
  load-prefer-newer t
