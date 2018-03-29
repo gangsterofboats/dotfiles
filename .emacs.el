@@ -65,6 +65,7 @@
 (use-package julia-mode)
 (use-package lua-mode)
 (use-package markdown-mode)
+(use-package nim-mode)
 (use-package noctilux-theme)
 (use-package nov)
 (use-package org)
