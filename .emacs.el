@@ -10,14 +10,14 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/")) ; MELPA
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")) ; Marmalade
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org Mode
-(add-to-list 'package-archives '("SC" . "http://joseito.republika.pl/sunrise-commander/")) ; Sunrise Commander
+;; (add-to-list 'package-archives '("SC" . "http://joseito.republika.pl/sunrise-commander/")) ; Sunrise Commander
 (package-initialize)
 
 ;; Package archives order
 (setq package-archive-priorities
       '(("melpa" . 30)
         ("org" . 30)
-        ("SC" . 30)
+        ;; ("SC" . 30)
         ("marmalade" . 20)
         ("melpa-stable" . 20)
         ("gnu" . 10)))
