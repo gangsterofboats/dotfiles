@@ -16,9 +16,7 @@
 (setq package-archive-priorities
       '(("melpa" . 30)
         ("org" . 30)
-        ;; ("SC" . 30)
         ("marmalade" . 20)
-        ("melpa-stable" . 20)
         ("gnu" . 10)))
 
 ;; Use Package settings
