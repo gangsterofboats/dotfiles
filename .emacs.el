@@ -10,7 +10,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/")) ; MELPA
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")) ; Marmalade
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org Mode
-;; (add-to-list 'package-archives '("SC" . "http://joseito.republika.pl/sunrise-commander/")) ; Sunrise Commander
 (package-initialize)
 
 ;; Package archives order
@@ -99,6 +98,8 @@
 (use-package ls-lisp+
   :load-path "lisp/")
 (use-package smalltalk-mode
+  :load-path "lisp/")
+(use-package sunrise-commander
   :load-path "lisp/")
 
 ;;; Settings
