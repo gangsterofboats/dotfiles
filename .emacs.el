@@ -33,6 +33,7 @@
 (use-package alchemist)
 (use-package crystal-mode)
 (use-package d-mode)
+;; (use-package deft)
 (use-package emmet-mode
              :hook (sgml-mode css-mode))
 (use-package ergoemacs-mode
@@ -68,7 +69,8 @@
 (use-package nim-mode)
 (use-package noctilux-theme)
 (use-package nov)
-(use-package org)
+(use-package org
+             :config (setq org-export-backends '(ascii html icalendar latex man md odt org texinfo)))
 (use-package paradox)
 (use-package perl6-mode)
 (use-package powershell)
@@ -86,6 +88,7 @@
              (setq yascroll:delay-to-hide nil))
 (use-package yasnippet
              :bind ("C-^" . yas-global-mode))
+(use-package zig-mode)
 
 ;; Local packages
 (use-package arc
@@ -118,14 +121,14 @@
       '(
         try-expand-dabbrev
         try-expand-dabbrev-all-buffers
-        ; try-expand-dabbrev-from-kill
+        ;; try-expand-dabbrev-from-kill
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol
         try-complete-file-name-partially
         try-complete-file-name
-        ; try-expand-all-abbrevs
-        ; try-expand-list
-        ; try-expand-line
+        ;; try-expand-all-abbrevs
+        ;; try-expand-list
+        ;; try-expand-line
         ))
 
 ;; Line Numbers
