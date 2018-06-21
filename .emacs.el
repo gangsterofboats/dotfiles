@@ -78,6 +78,7 @@
              :init (add-hook 'after-init-hook #'sml/setup))
 (use-package smartparens
              :config (smartparens-global-mode t))
+(use-package yaml-mode)
 (use-package yascroll
              :init (scroll-bar-mode -1)
              :config
