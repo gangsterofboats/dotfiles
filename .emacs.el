@@ -60,6 +60,7 @@
               ("C-h v" . helpful-variable)
               ("C-h k" . helpful-key)
               ("C-c C-d" . helpful-at-point)))
+(use-package json-mode)
 (use-package julia-mode)
 (use-package lua-mode)
 (use-package markdown-mode)
