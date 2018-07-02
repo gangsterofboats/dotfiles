@@ -10,7 +10,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/")) ; MELPA
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")) ; Marmalade
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org Mode
-(package-initialize)
 
 ;; Package archives order
 (setq package-archive-priorities
