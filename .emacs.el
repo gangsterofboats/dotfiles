@@ -87,10 +87,15 @@
 ;; El-Get settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/el-get"))
 (add-to-list 'el-get-recipe-path (expand-file-name "~/.emacs.d/el-get-user/recipes"))
-(el-get-bundle! dired+ :type emacswiki (setq diredp-hide-details-initially-flag nil))
+(el-get-bundle dired+
+               :type emacswiki
+               :before (setq diredp-hide-details-initially-flag nil)
+               :features (dired+))
 (el-get-bundle escherdragon/sunrise-commander)
-(el-get-bundle! files+ :type emacswiki)
-(el-get-bundle! ls-lisp+ :type emacswiki)
+(el-get-bundle files+
+               :type emacswiki
+               :features (files+))
+(el-get-bundle ls-lisp+ :type emacswiki)
  
 ;; Local packages
 (use-package arc
