@@ -31,6 +31,7 @@
 (use-package crystal-mode)
 (use-package d-mode)
 ;; (use-package deft)
+(use-package el-get)
 (use-package emmet-mode
              :hook (sgml-mode css-mode))
 (use-package ergoemacs-mode
@@ -89,17 +90,23 @@
              :bind ("C-^" . yas-global-mode))
 (use-package zig-mode)
 
+;; El-Get settings
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/el-get"))
+(add-to-list 'el-get-recipe-path (expand-file-name "~/.emacs.d/el-get-user/recipes"))
+(el-get-bundle escherdragon/sunrise-commander)
+(el-get-bundle dired+ :type emacswiki (setq diredp-hide-details-initially-flag nil))
+(el-get-bundle ls-lisp+ :type emacswiki)
+(el-get-bundle files+ :type emacswiki)
+ 
 ;; Local packages
 (use-package arc
   :load-path "lisp/")
-(use-package dired+
-  :load-path "lisp/"
-  :init (setq diredp-hide-details-initially-flag nil))
-(use-package ls-lisp+
-  :load-path "lisp/")
+;;(use-package dired+
+;;  :load-path "lisp/"
+;;  :init (setq diredp-hide-details-initially-flag nil))
+;;(use-package ls-lisp+
+;;  :load-path "lisp/")
 (use-package smalltalk-mode
-  :load-path "lisp/")
-(use-package sunrise-commander
   :load-path "lisp/")
 
 ;;; Settings
