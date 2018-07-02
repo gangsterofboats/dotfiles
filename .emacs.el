@@ -89,13 +89,14 @@
 (add-to-list 'el-get-recipe-path (expand-file-name "~/.emacs.d/el-get-user/recipes"))
 (el-get-bundle dired+
                :type emacswiki
-               :before (setq diredp-hide-details-initially-flag nil)
-               :features (dired+))
+               :before (setq diredp-hide-details-initially-flag nil))
 (el-get-bundle escherdragon/sunrise-commander)
 (el-get-bundle files+
                :type emacswiki
                :features (files+))
-(el-get-bundle ls-lisp+ :type emacswiki)
+(el-get-bundle ls-lisp+
+               :type emacswiki
+               :features (ls-lisp+))
  
 ;; Local packages
 (use-package arc
@@ -148,7 +149,7 @@
 (global-set-key (kbd "C-'") #'comment-line)
 (global-set-key (kbd "C-|") #'comment-box)
 (global-set-key (kbd "M-!") #'shell-command)
-(global-set-key (kbd "M-[") #'set-mark-command)
+(global-set-key (kbd "M-[") #'set-mark-command) ; a shorter CTRL-[ Spc
 (global-set-key (kbd "C-x C-d") #'dired) ; Switch these two.  Given buffer list keybindings, makes more sense
 (global-set-key (kbd "C-x d") #'list-directory)
 
@@ -179,7 +180,8 @@
  load-prefer-newer t
  make-backup-files nil
  read-buffer-completion-ignore-case t
- ring-bell-function #'ignore)
+ ring-bell-function #'ignore
+ vc-follow-symlinks t)
 (setq-default
  c-basic-offset 4
  fill-column 80
