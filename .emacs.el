@@ -1,8 +1,3 @@
-;;; Requires
-
-;; (require 'view)
-;; (global-set-key (kbd "C-x C-q") #'view-mode)
-
 ;;; Packages
 
 ;; Package manager settings
@@ -92,10 +87,10 @@
 ;; El-Get settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/el-get"))
 (add-to-list 'el-get-recipe-path (expand-file-name "~/.emacs.d/el-get-user/recipes"))
-(el-get-bundle dired+ :type emacswiki)
+(el-get-bundle! dired+ :type emacswiki (setq diredp-hide-details-initially-flag nil))
 (el-get-bundle escherdragon/sunrise-commander)
-(el-get-bundle files+ :type emacswiki)
-(el-get-bundle ls-lisp+ :type emacswiki)
+(el-get-bundle! files+ :type emacswiki)
+(el-get-bundle! ls-lisp+ :type emacswiki)
  
 ;; Local packages
 (use-package arc
@@ -123,14 +118,14 @@
       '(
         try-expand-dabbrev
         try-expand-dabbrev-all-buffers
-        ;; try-expand-dabbrev-from-kill
+        try-expand-dabbrev-from-kill
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol
         try-complete-file-name-partially
         try-complete-file-name
-        ;; try-expand-all-abbrevs
-        ;; try-expand-list
-        ;; try-expand-line
+        try-expand-all-abbrevs
+        try-expand-list
+        try-expand-line
         ))
 
 ;; Line Numbers
@@ -139,6 +134,10 @@
       (global-linum-mode t)
       (set-face-attribute 'linum nil :box nil :slant 'normal)) ; prevent line numbers from inheriting line's italics
   (global-display-line-numbers-mode t))
+
+;; View Mode
+(require 'view)
+(global-set-key (kbd "C-x C-q") #'view-mode)
 
 ;; Some keybindings
 (global-set-key (kbd "C-'") #'comment-line)
