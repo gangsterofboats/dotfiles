@@ -82,6 +82,7 @@
              (setq yascroll:delay-to-hide nil))
 (use-package yasnippet
              :bind ("C-^" . yas-global-mode))
+(use-package yasnippet-snippets)
 (use-package zig-mode)
 
 ;; El-Get settings
