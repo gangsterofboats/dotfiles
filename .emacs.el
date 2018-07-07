@@ -164,7 +164,6 @@
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (column-number-mode t)
 (display-time-mode t)
-(electric-pair-mode t)
 (global-subword-mode t)
 (global-undo-tree-mode t)
 (prefer-coding-system 'utf-8-unix)
