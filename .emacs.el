@@ -2,7 +2,7 @@
 
 ;; Package manager settings
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")) ; MELPA
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t) ; MELPA
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t) ; Org Mode
 
 ;; Package archives order
@@ -95,7 +95,7 @@
 (el-get-bundle ls-lisp+
                :type emacswiki
                :features (ls-lisp+))
- 
+
 ;; Local packages
 (use-package arc
   :load-path "lisp/")
