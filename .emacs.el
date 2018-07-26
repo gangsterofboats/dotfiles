@@ -2,15 +2,13 @@
 
 ;; Package manager settings
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/")) ; MELPA
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")) ; Marmalade
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org Mode
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")) ; MELPA
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t) ; Org Mode
 
 ;; Package archives order
 (setq package-archive-priorities
       '(("melpa" . 30)
         ("org" . 30)
-        ("marmalade" . 20)
         ("gnu" . 10)))
 
 ;; Use Package settings
@@ -24,7 +22,7 @@
 (use-package alchemist)
 (use-package crystal-mode)
 (use-package d-mode)
-;; (use-package deft)
+(use-package deft)
 (use-package el-get)
 (use-package emmet-mode
              :hook (sgml-mode css-mode))
