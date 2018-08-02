@@ -87,8 +87,6 @@
 ;; El-Get settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/el-get"))
 (add-to-list 'el-get-recipe-path (expand-file-name "~/.emacs.d/el-get-user/recipes"))
-(el-get 'sync)
-
 ;; (el-get-bundle casouri/isolate)
 (el-get-bundle dired+
                :type emacswiki
