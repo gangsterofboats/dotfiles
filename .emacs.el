@@ -72,6 +72,7 @@
              :init (add-hook 'after-init-hook #'sml/setup))
 (use-package smartparens
              :config (smartparens-global-mode t))
+(use-package tide)
 (use-package yaml-mode)
 (use-package yascroll
              :init (scroll-bar-mode -1)
@@ -86,6 +87,7 @@
 ;; El-Get settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/el-get"))
 (add-to-list 'el-get-recipe-path (expand-file-name "~/.emacs.d/el-get-user/recipes"))
+(el-get 'sync)
 (el-get-bundle dired+
                :type emacswiki
                :before (setq diredp-hide-details-initially-flag nil)
@@ -161,6 +163,7 @@
 ;; Other settings
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (column-number-mode t)
+(defalias 'perl-mode 'cperl-mode) ; Use CPerl Mode for Perl 5
 (display-time-mode t)
 (global-subword-mode t)
 (global-undo-tree-mode t)
