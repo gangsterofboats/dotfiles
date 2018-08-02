@@ -23,8 +23,6 @@
 (use-package crystal-mode)
 (use-package d-mode)
 (use-package deft)
-(use-package el-get
-             :ensure nil)
 (use-package emmet-mode
              :hook (sgml-mode css-mode))
 (use-package ergoemacs-mode
@@ -87,6 +85,12 @@
 
 ;; El-Get settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/el-get"))
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
 (add-to-list 'el-get-recipe-path (expand-file-name "~/.emacs.d/el-get-user/recipes"))
 ;; (el-get-bundle casouri/isolate)
 (el-get-bundle dired+
@@ -98,6 +102,7 @@
 (el-get-bundle ls-lisp+
                :type emacswiki
                :features (ls-lisp+))
+(el-get 'sync)
 
 ;; Local packages
 (use-package arc
