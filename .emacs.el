@@ -23,7 +23,8 @@
 (use-package crystal-mode)
 (use-package d-mode)
 (use-package deft)
-(use-package el-get)
+(use-package el-get
+             :ensure nil)
 (use-package emmet-mode
              :hook (sgml-mode css-mode))
 (use-package ergoemacs-mode
