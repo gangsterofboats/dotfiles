@@ -2,8 +2,8 @@
 
 ;; Package manager settings
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t) ; MELPA
-(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t) ; Org Mode
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t) ; MELPA
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org Mode
 
 ;; Package archives order
 (setq package-archive-priorities
