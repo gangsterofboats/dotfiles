@@ -22,6 +22,7 @@
 (use-package alchemist)
 (use-package crystal-mode)
 (use-package d-mode)
+(use-package darkokai-theme)
 (use-package deft)
 (use-package emmet-mode
              :hook (sgml-mode css-mode))
@@ -116,7 +117,9 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/"))
 
 ;; Set color theme
-(load-theme 'noctilux t)
+;; (load-theme 'darkokai t)
+;; (load-theme 'noctilux t)
+(load-theme 'srcery t)
 
 ;; Set font
 (set-face-attribute 'default nil :font "Consolas-12")
