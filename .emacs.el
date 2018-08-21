@@ -3,7 +3,7 @@
 ;; Package manager settings
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t) ; MELPA
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org Mode
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)     ; Org Mode
 
 ;; Package archives order
 (setq package-archive-priorities
@@ -28,12 +28,11 @@
              :hook (sgml-mode css-mode))
 (use-package ergoemacs-mode
              :defer nil
-             :bind ("M-F" . zap-to-char)
-             :init
+             :config
+             (ergoemacs-mode t)
              (setq
               ergoemacs-theme nil
-              ergoemacs-keyboard-layout "us")
-             :config (ergoemacs-mode t))
+              ergoemacs-keyboard-layout "us"))
 (use-package erlang)
 (use-package ess)
 (use-package fountain-mode)
@@ -41,9 +40,6 @@
 (use-package haskell-mode)
 (use-package helm
              :defer nil
-             :bind
-             (("M-a" . helm-M-x)
-              ("C-o" . helm-find-files))
              :config (helm-mode t))
 (use-package helm-swoop
              :bind ("C-f" . helm-swoop))
@@ -69,7 +65,9 @@
 (use-package rainbow-mode)
 (use-package rust-mode)
 (use-package smart-mode-line
-             :init (add-hook 'after-init-hook #'sml/setup))
+             :init (add-hook 'after-init-hook #'sml/setup)
+             :config
+             (setq sml/no-confirm-load-theme t))
 (use-package smartparens
              :config (smartparens-global-mode t))
 (use-package tide)
@@ -93,7 +91,6 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 (add-to-list 'el-get-recipe-path (expand-file-name "~/.emacs.d/el-get-user/recipes"))
-;; (el-get-bundle casouri/isolate)
 (el-get-bundle dired+
                :type emacswiki
                :before (setq diredp-hide-details-initially-flag nil)
@@ -103,7 +100,6 @@
 (el-get-bundle ls-lisp+
                :type emacswiki
                :features (ls-lisp+))
-;; (el-get-bundle tslilc/siege-mode)
 (el-get 'sync)
 
 ;; Local packages
@@ -145,11 +141,7 @@
         ))
 
 ;; Line Numbers
-(if (< emacs-major-version 26)
-    (progn
-      (global-linum-mode t)
-      (set-face-attribute 'linum nil :box nil :slant 'normal)) ; prevent line numbers from inheriting line's italics
-  (global-display-line-numbers-mode t))
+(global-display-line-numbers-mode t)
 
 ;; View Mode
 (require 'view)
@@ -163,13 +155,6 @@
 (global-set-key (kbd "C-x C-d") #'dired) ; Switch these two.  Given buffer list keybindings, makes more sense
 (global-set-key (kbd "C-x d") #'list-directory)
 
-;; (if (eq system-type 'windows-nt)
-    ;; (progn
-      ;; (setq w32-pass-lwindow-to-system nil)
-      ;; (setq w32-lwindow-modifier 'super)
-      ;; (setq w32-pass-rwindow-to-system nil)
-      ;; (setq w32-rwindow-modifier 'super)))
-
 ;; Other settings
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (column-number-mode t)
@@ -181,7 +166,7 @@
 (set-default-coding-systems 'utf-8)
 (set-language-environment "UTF-8")
 (setq
- custom-file (expand-file-name "~/.custom.el")
+ custom-file (expand-file-name "~/.custom.el") ; (setq custom-file (make-temp-file ""))
  initial-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  default-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  frame-title-format '("" "%b - Emacs " emacs-version)
@@ -209,7 +194,6 @@
 ;;; Final settings
 
 ;; Load custom file
-;; (setq custom-file (make-temp-file ""))
 ;; (load custom-file)
 
 ;; Initial scratch mode
