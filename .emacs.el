@@ -103,6 +103,7 @@
 (el-get-bundle ls-lisp+
                :type emacswiki
                :features (ls-lisp+))
+;; (el-get-bundle tslilc/siege-mode)
 (el-get 'sync)
 
 ;; Local packages
