@@ -71,6 +71,7 @@
 (use-package smartparens
              :config (smartparens-global-mode t))
 (use-package tide)
+(use-package xah-elisp-mode)
 (use-package yaml-mode)
 (use-package yascroll
              :init (scroll-bar-mode -1)
