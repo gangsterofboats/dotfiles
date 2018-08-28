@@ -70,6 +70,7 @@
              (setq sml/no-confirm-load-theme t))
 (use-package smartparens
              :config (smartparens-global-mode t))
+(use-package srcery-theme)
 (use-package tide)
 (use-package xah-elisp-mode)
 (use-package yaml-mode)
