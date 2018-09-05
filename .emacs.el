@@ -19,6 +19,7 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
+(use-package adoc-mode)
 (use-package alchemist)
 (use-package crystal-mode)
 (use-package d-mode)
@@ -83,6 +84,14 @@
              :bind ("C-^" . yas-global-mode))
 (use-package yasnippet-snippets)
 (use-package zig-mode)
+
+;; Conditional packages
+;; (if (eq system-type 'gnu/linux)
+    ;; (use-package slime))
+(if (eq system-type 'gnu/linux)
+    (use-package sly))
+(if (eq system-type 'windows-nt)
+    (use-package xah-find))
 
 ;; El-Get settings
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/el-get"))
