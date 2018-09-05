@@ -162,7 +162,6 @@
 (global-set-key (kbd "C-'") #'comment-line)
 (global-set-key (kbd "C-|") #'comment-box)
 (global-set-key (kbd "M-!") #'shell-command)
-(global-set-key (kbd "M-[") #'set-mark-command) ; a shorter CTRL-[ Spc
 (global-set-key (kbd "C-x C-d") #'dired) ; Switch these two.  Given buffer list keybindings, makes more sense
 (global-set-key (kbd "C-x d") #'list-directory)
 
