@@ -21,7 +21,11 @@
 
 (use-package adoc-mode)
 (use-package alchemist)
-(use-package cobol-mode)
+(use-package cobol-mode
+             :config
+             (setq
+              cobol-format-style 'lower-case
+              cobol-source-format 'free))
 (use-package crystal-mode)
 (use-package d-mode)
 (use-package darkokai-theme)
