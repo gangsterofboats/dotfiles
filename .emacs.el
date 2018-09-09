@@ -21,6 +21,7 @@
 
 (use-package adoc-mode)
 (use-package alchemist)
+(use-package cobol-mode)
 (use-package crystal-mode)
 (use-package d-mode)
 (use-package darkokai-theme)
