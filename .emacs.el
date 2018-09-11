@@ -88,6 +88,7 @@
 (use-package yasnippet
              :bind ("C-^" . yas-global-mode))
 (use-package yasnippet-snippets)
+(use-package zerodark-theme)
 (use-package zig-mode)
 
 ;; Conditional packages
@@ -133,6 +134,7 @@
 ;; (load-theme 'darkokai t)
 ;; (load-theme 'noctilux t)
 (load-theme 'srcery t)
+;; (load-theme 'zerodark t)
 
 ;; Set font
 (set-face-attribute 'default nil :font "Consolas-12")
