@@ -78,6 +78,7 @@
              :config (smartparens-global-mode t))
 (use-package srcery-theme)
 (use-package tide)
+(use-package tuareg)
 (use-package xah-elisp-mode)
 (use-package yaml-mode)
 (use-package yascroll
