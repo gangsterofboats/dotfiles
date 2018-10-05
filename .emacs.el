@@ -131,15 +131,6 @@
 ;; Add directory to load path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/"))
 
-;; Set color theme
-;; (load-theme 'darkokai t)
-;; (load-theme 'noctilux t)
-(load-theme 'srcery t)
-;; (load-theme 'zerodark t)
-
-;; Set font
-(set-face-attribute 'default nil :font "Consolas-12")
-
 ;; Garbage collection
 (add-hook 'focus-out-hook #'garbage-collect)
 
@@ -161,6 +152,15 @@
 
 ;; Line Numbers
 (global-display-line-numbers-mode t)
+
+;; Set color theme
+;; (load-theme 'darkokai t)
+;; (load-theme 'noctilux t)
+(load-theme 'srcery t)
+;; (load-theme 'zerodark t)
+
+;; Set font
+(set-face-attribute 'default nil :font "Consolas-12")
 
 ;; View Mode
 (require 'view)
@@ -184,6 +184,7 @@
 (set-default-coding-systems 'utf-8)
 (set-language-environment "UTF-8")
 (setq
+ cperl-hairy t
  cperl-indent-level 4
  custom-file (expand-file-name "~/.custom.el") ; (setq custom-file (make-temp-file ""))
  initial-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
