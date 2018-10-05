@@ -184,6 +184,7 @@
 (set-default-coding-systems 'utf-8)
 (set-language-environment "UTF-8")
 (setq
+ cperl-indent-level 4
  custom-file (expand-file-name "~/.custom.el") ; (setq custom-file (make-temp-file ""))
  initial-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  default-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
