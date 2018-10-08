@@ -160,7 +160,8 @@
 ;; (load-theme 'zerodark t)
 
 ;; Set font
-(set-face-attribute 'default nil :font "Consolas-12")
+;; (set-face-attribute 'default nil :font "Consolas-12")
+(set-face-font 'default "Consolas-12")
 
 ;; View Mode
 (require 'view)
