@@ -1,24 +1,22 @@
+;;;; Packages
+
+;;; Straight.el package manager settings
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
+
 ;;; Packages
-
-;; Package manager settings
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t) ; MELPA
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)     ; Org Mode
-
-;; Package archives order
-(setq package-archive-priorities
-      '(("melpa" . 30)
-        ("org" . 30)
-        ("gnu" . 10)))
-
-;; Use Package settings
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(eval-when-compile
-  (require 'use-package))
-(setq use-package-always-ensure t)
-
 (use-package adoc-mode)
 (use-package alchemist)
 (use-package cobol-mode
@@ -62,8 +60,6 @@
 (use-package nim-mode)
 (use-package noctilux-theme)
 (use-package nov)
-(use-package org
-             :config (setq org-export-backends '(ascii html icalendar latex man md odt org texinfo)))
 (use-package paradox)
 (use-package perl6-mode)
 (use-package powershell)
@@ -92,7 +88,40 @@
 (use-package zerodark-theme)
 (use-package zig-mode)
 
-;; Conditional packages
+;;; Org mode
+(require 'subr-x)
+(straight-use-package 'git)
+
+(defun org-git-version ()
+  "The Git version of org-mode.
+Inserted by installing org-mode or when a release is made."
+  (require 'git)
+  (let ((git-repo (expand-file-name
+                   "straight/repos/org/" user-emacs-directory)))
+    (string-trim
+     (git-run "describe"
+              "--match=release\*"
+              "--abbrev=6"
+              "HEAD"))))
+
+(defun org-release ()
+  "The release version of org-mode.
+Inserted by installing org-mode or when a release is made."
+  (require 'git)
+  (let ((git-repo (expand-file-name
+                   "straight/repos/org/" user-emacs-directory)))
+    (string-trim
+     (string-remove-prefix
+      "release_"
+      (git-run "describe"
+               "--match=release\*"
+               "--abbrev=0"
+               "HEAD")))))
+
+(provide 'org-version)
+(straight-use-package 'org)
+
+;;; Conditional packages
 ;; (if (eq system-type 'gnu/linux)
     ;; (use-package slime))
 (if (eq system-type 'gnu/linux)
@@ -100,41 +129,21 @@
 (if (eq system-type 'windows-nt)
     (use-package xah-find))
 
-;; El-Get settings
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/el-get/el-get"))
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-(add-to-list 'el-get-recipe-path (expand-file-name "~/.emacs.d/el-get-user/recipes"))
-(el-get-bundle dired+
-               :type emacswiki
-               :before (setq diredp-hide-details-initially-flag nil)
-               :features (dired+))
-(el-get-bundle escherdragon/sunrise-commander)
-(el-get-bundle files+ :type emacswiki)
-(el-get-bundle ls-lisp+
-               :type emacswiki
-               :features (ls-lisp+))
-(el-get 'sync)
-
-;; Local packages
+;;; Local packages
 (use-package arc
   :load-path "lisp/")
 (use-package smalltalk-mode
   :load-path "lisp/")
 
-;;; Settings
+;;;; Settings
 
-;; Add directory to load path
+;;; Add directory to load path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/"))
 
-;; Garbage collection
+;;; Garbage collection
 (add-hook 'focus-out-hook #'garbage-collect)
 
-;; Hippie Expand
+;;; Hippie expand
 (global-set-key (kbd "C-;") #'hippie-expand)
 (setq hippie-expand-try-functions-list
       '(
@@ -150,31 +159,30 @@
         try-expand-line
         ))
 
-;; Line Numbers
+;;; Line numbers
 (global-display-line-numbers-mode t)
 
-;; Set color theme
+;;; Set color theme
 ;; (load-theme 'darkokai t)
 ;; (load-theme 'noctilux t)
 (load-theme 'srcery t)
 ;; (load-theme 'zerodark t)
 
-;; Set font
-;; (set-face-attribute 'default nil :font "Consolas-12")
+;;; Set font
 (set-face-font 'default "Consolas-12")
 
-;; View Mode
+;;; View mode
 (require 'view)
 (global-set-key (kbd "C-x C-q") #'view-mode)
 
-;; Some keybindings
+;;; Some keybindings
 (global-set-key (kbd "C-'") #'comment-line)
 (global-set-key (kbd "C-|") #'comment-box)
 (global-set-key (kbd "M-!") #'shell-command)
 (global-set-key (kbd "C-x C-d") #'dired) ; Switch these two.  Given buffer list keybindings, makes more sense
 (global-set-key (kbd "C-x d") #'list-directory)
 
-;; Other settings
+;;; Other settings
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (column-number-mode t)
 (defalias 'perl-mode 'cperl-mode) ; Use CPerl Mode for Perl 5
@@ -204,23 +212,24 @@
  indent-tabs-mode nil
  tab-width 4)
 (show-paren-mode t)
+(tool-bar-mode -1)
 
-;;; Functions
+;;;; Functions
 
-;; Disable themes function
+;;; Disable themes function
 (defun disable-all-themes ()
   (interactive)
   (mapc #'disable-theme custom-enabled-themes))
 
-;;; Final settings
+;;;; Final settings
 
-;; Load custom file
+;;; Load custom file
 ;; (load custom-file)
 
-;; Initial scratch mode
+;;; Initial scratch mode
 ;; (setq-default initial-major-mode #'emacs-lisp-mode)
 
-;; Set starting directory on Windows
+;;; Set starting directory on Windows
 (if (eq system-type 'windows-nt)
     (progn
       (cd (getenv "HOMEPATH"))
