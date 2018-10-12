@@ -88,7 +88,7 @@
 (use-package zerodark-theme)
 (use-package zig-mode)
 
-;;; Org mode
+;;; Org Mode
 (require 'subr-x)
 (straight-use-package 'git)
 
@@ -131,9 +131,11 @@ Inserted by installing org-mode or when a release is made."
 
 ;;; Local packages
 (use-package arc
-  :load-path "lisp/")
+  :load-path "lisp/"
+  :straight nil)
 (use-package smalltalk-mode
-  :load-path "lisp/")
+  :load-path "lisp/"
+  :straight nil)
 
 ;;;; Settings
 
@@ -143,7 +145,7 @@ Inserted by installing org-mode or when a release is made."
 ;;; Garbage collection
 (add-hook 'focus-out-hook #'garbage-collect)
 
-;;; Hippie expand
+;;; Hippie Expand
 (global-set-key (kbd "C-;") #'hippie-expand)
 (setq hippie-expand-try-functions-list
       '(
@@ -159,7 +161,7 @@ Inserted by installing org-mode or when a release is made."
         try-expand-line
         ))
 
-;;; Line numbers
+;;; Line Numbers
 (global-display-line-numbers-mode t)
 
 ;;; Set color theme
@@ -171,7 +173,7 @@ Inserted by installing org-mode or when a release is made."
 ;;; Set font
 (set-face-font 'default "Consolas-12")
 
-;;; View mode
+;;; View Mode
 (require 'view)
 (global-set-key (kbd "C-x C-q") #'view-mode)
 
