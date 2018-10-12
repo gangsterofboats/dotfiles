@@ -129,13 +129,11 @@ Inserted by installing org-mode or when a release is made."
 (if (eq system-type 'windows-nt)
     (use-package xah-find))
 
-;;; Local packages
-(use-package arc
-  :load-path "lisp/"
-  :straight nil)
-(use-package smalltalk-mode
-  :load-path "lisp/"
-  :straight nil)
+;;; Couple exotic packages
+(straight-use-package
+ '(smalltalk-mode :type git :host github :repo "gnu-smalltalk/smalltalk" :files ("smalltalk-mode.el"))) ; Smalltalk mode
+(straight-use-package
+ '(arc :type git :host github :repo "arclanguage/anarki" :files ("extras/arc.el"))) ; Arc mode, lisp variant
 
 ;;;; Settings
 
