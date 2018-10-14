@@ -212,7 +212,6 @@ Inserted by installing org-mode or when a release is made."
  indent-tabs-mode nil
  tab-width 4)
 (show-paren-mode t)
-(tool-bar-mode -1)
 
 ;;;; Functions
 
