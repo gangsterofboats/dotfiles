@@ -4,6 +4,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t) ; MELPA
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)     ; Org Mode
+(unless package--initialized (package-initialize t))
 
 ;;; Package archives order
 (setq package-archive-priorities
