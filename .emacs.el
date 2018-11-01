@@ -1,20 +1,23 @@
 ;;;; Packages
 
-;;; Straight.el package manager settings
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
-(straight-use-package 'use-package)
-(setq straight-use-package-by-default t)
+;;; Package manager settings
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t) ; MELPA
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)     ; Org Mode
+
+;;; Package archives order
+(setq package-archive-priorities
+      '(("melpa" . 30)
+        ("org" . 30)
+        ("gnu" . 10)))
+
+;;; Use Package settings
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
+(setq use-package-always-ensure t)
 
 ;;; Packages
 (use-package adoc-mode)
@@ -60,6 +63,8 @@
 (use-package nim-mode)
 (use-package noctilux-theme)
 (use-package nov)
+(use-package org
+             :config (setq org-export-backends '(ascii html icalendar latex man md odt org texinfo)))
 (use-package paradox)
 (use-package perl6-mode)
 (use-package powershell)
@@ -88,39 +93,6 @@
 (use-package zerodark-theme)
 (use-package zig-mode)
 
-;;; Org Mode
-(require 'subr-x)
-(straight-use-package 'git)
-
-(defun org-git-version ()
-  "The Git version of org-mode.
-Inserted by installing org-mode or when a release is made."
-  (require 'git)
-  (let ((git-repo (expand-file-name
-                   "straight/repos/org/" user-emacs-directory)))
-    (string-trim
-     (git-run "describe"
-              "--match=release\*"
-              "--abbrev=6"
-              "HEAD"))))
-
-(defun org-release ()
-  "The release version of org-mode.
-Inserted by installing org-mode or when a release is made."
-  (require 'git)
-  (let ((git-repo (expand-file-name
-                   "straight/repos/org/" user-emacs-directory)))
-    (string-trim
-     (string-remove-prefix
-      "release_"
-      (git-run "describe"
-               "--match=release\*"
-               "--abbrev=0"
-               "HEAD")))))
-
-(provide 'org-version)
-(straight-use-package 'org)
-
 ;;; Conditional packages
 ;; (if (eq system-type 'gnu/linux)
     ;; (use-package slime))
@@ -129,11 +101,11 @@ Inserted by installing org-mode or when a release is made."
 (if (eq system-type 'windows-nt)
     (use-package xah-find))
 
-;;; Couple exotic packages
-(straight-use-package
- '(smalltalk-mode :type git :host github :repo "gnu-smalltalk/smalltalk" :files ("smalltalk-mode.el"))) ; Smalltalk mode
-(straight-use-package
- '(arc :type git :host github :repo "arclanguage/anarki" :files ("extras/arc.el"))) ; Arc mode, lisp variant
+;; Local packages
+(use-package arc
+  :load-path "lisp/")
+(use-package smalltalk-mode
+  :load-path "lisp/")
 
 ;;;; Settings
 
@@ -212,6 +184,7 @@ Inserted by installing org-mode or when a release is made."
  indent-tabs-mode nil
  tab-width 4)
 (show-paren-mode t)
+(tool-bar-mode -1)
 
 ;;;; Functions
 
