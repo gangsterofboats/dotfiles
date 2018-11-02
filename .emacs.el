@@ -149,6 +149,7 @@
 (global-set-key (kbd "C-x C-q") #'view-mode)
 
 ;;; Some keybindings
+(global-set-key (kbd "C-#") #'global-company-mode)
 (global-set-key (kbd "C-'") #'comment-line)
 (global-set-key (kbd "C-|") #'comment-box)
 (global-set-key (kbd "M-!") #'shell-command)
