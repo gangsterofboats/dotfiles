@@ -65,13 +65,17 @@
 (use-package noctilux-theme)
 (use-package nov)
 (use-package org
-             :config (setq org-export-backends '(ascii html icalendar latex man md odt org texinfo)))
+             :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo)))
+(use-package ox-asciidoc)
+(use-package ox-rst)
 (use-package paradox)
 (use-package perl6-mode)
 (use-package powershell)
 (use-package racket-mode)
 (use-package rainbow-mode)
 (use-package rust-mode)
+;; (use-package slime)
+(use-package sly)
 (use-package smart-mode-line
              :init (add-hook 'after-init-hook #'sml/setup)
              :config
@@ -83,26 +87,13 @@
 (use-package tuareg)
 (use-package xah-elisp-mode)
 (use-package yaml-mode)
-(use-package yascroll
-             :init (scroll-bar-mode -1)
-             :config
-             (global-yascroll-bar-mode t)
-             (setq yascroll:delay-to-hide nil))
 (use-package yasnippet
              :bind ("C-^" . yas-global-mode))
 (use-package yasnippet-snippets)
 (use-package zerodark-theme)
 (use-package zig-mode)
 
-;;; Conditional packages
-;; (if (eq system-type 'gnu/linux)
-    ;; (use-package slime))
-(if (eq system-type 'gnu/linux)
-    (use-package sly))
-(if (eq system-type 'windows-nt)
-    (use-package xah-find))
-
-;; Local packages
+;;; Local packages
 (use-package arc
   :load-path "lisp/")
 (use-package smalltalk-mode
@@ -186,7 +177,6 @@
  indent-tabs-mode nil
  tab-width 4)
 (show-paren-mode t)
-(tool-bar-mode -1)
 
 ;;;; Functions
 
@@ -202,9 +192,3 @@
 
 ;;; Initial scratch mode
 ;; (setq-default initial-major-mode #'emacs-lisp-mode)
-
-;;; Set starting directory on Windows
-(if (eq system-type 'windows-nt)
-    (progn
-      (cd (getenv "HOMEPATH"))
-      (setq default-directory (expand-file-name "~/"))))
