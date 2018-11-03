@@ -8,8 +8,8 @@
 
 ;;; Package archives order
 (setq package-archive-priorities
-      '(("melpa" . 30)
-        ("org" . 30)
+      '(("melpa" . 20)
+        ("org" . 20)
         ("gnu" . 10)))
 
 ;;; Use Package settings
@@ -23,6 +23,10 @@
 ;;; Packages
 (use-package adoc-mode)
 (use-package alchemist)
+(use-package cc-mode
+             :config
+             (setq c-default-style "bsd")
+             (setq-default c-basic-offset 4))
 (use-package cobol-mode
              :config
              (setq
@@ -43,6 +47,8 @@
               ergoemacs-keyboard-layout "us"))
 (use-package erlang)
 (use-package ess)
+(use-package expand-region
+             :bind ("C-c =" . er/expand-region))
 (use-package fountain-mode)
 (use-package go-mode)
 (use-package haskell-mode)
@@ -57,7 +63,16 @@
               ("C-h v" . helpful-variable)
               ("C-h k" . helpful-key)
               ("C-c C-d" . helpful-at-point)))
-(use-package json-mode)
+(use-package js2-mode
+             :mode
+             ("\\.js$" . js2-mode)
+             ("\\.json$" . js2-jsx-mode)
+             :config
+             (setq
+              js-indent-level 4
+              js2-indent-level 4
+              js2-basic-offset 4))
+;; (use-package json-mode)
 (use-package julia-mode)
 (use-package lua-mode)
 (use-package markdown-mode)
@@ -66,6 +81,8 @@
 (use-package nov)
 (use-package org
              :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo)))
+(use-package org-bullets
+             :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode t))))
 (use-package ox-asciidoc)
 (use-package ox-rst)
 (use-package paradox)
@@ -95,14 +112,25 @@
 
 ;;; Local packages
 (use-package arc
-  :load-path "lisp/")
+             :load-path "lisp/")
 (use-package smalltalk-mode
-  :load-path "lisp/")
+             :load-path "lisp/")
 
 ;;;; Settings
 
 ;;; Add directory to load path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/"))
+
+;;; Ensure UTF-8 usage
+(prefer-coding-system 'utf-8-unix)
+(set-charset-priority 'unicode)
+;; (set-default-coding-systems 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+;; (set-language-environment "UTF-8")
+(set-selection-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+(setq locale-coding-system 'utf-8)
 
 ;;; Garbage collection
 (add-hook 'focus-out-hook #'garbage-collect)
@@ -155,25 +183,24 @@
 (display-time-mode t)
 (global-subword-mode t)
 (global-undo-tree-mode t)
-(prefer-coding-system 'utf-8-unix)
-(set-default-coding-systems 'utf-8)
-(set-language-environment "UTF-8")
 (setq
  cperl-hairy t
  cperl-indent-level 4
+ cursor-in-non-selected-windows nil
  custom-file (expand-file-name "~/.custom.el") ; (setq custom-file (make-temp-file ""))
  initial-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  default-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  frame-title-format '("" "%b - Emacs " emacs-version)
  gc-cons-threshold (* 100 1024 1024)
+ history-length 1000 ; history-length t
  inhibit-startup-screen t
  load-prefer-newer t
  make-backup-files nil
  read-buffer-completion-ignore-case t
+ require-final-newline t
  ring-bell-function #'ignore
  vc-follow-symlinks t)
 (setq-default
- c-basic-offset 4
  fill-column 80
  indent-tabs-mode nil
  tab-width 4)
