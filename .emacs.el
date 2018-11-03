@@ -149,6 +149,7 @@
 
 ;;; Other settings
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
+(blink-cursor-mode t)
 (column-number-mode t)
 (defalias 'perl-mode 'cperl-mode) ; Use CPerl Mode for Perl 5
 (display-time-mode t)
