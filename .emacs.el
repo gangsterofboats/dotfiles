@@ -48,7 +48,7 @@
 (use-package erlang)
 (use-package ess)
 (use-package expand-region
-             :bind ("C-c =" . er/expand-region))
+             :bind ("C-," . er/expand-region))
 (use-package fountain-mode)
 (use-package go-mode)
 (use-package haskell-mode)
@@ -80,7 +80,8 @@
 (use-package noctilux-theme)
 (use-package nov)
 (use-package org
-             :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo)))
+             :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo))
+             :ensure org-plus-contrib)
 (use-package org-bullets
              :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode t))))
 (use-package ox-asciidoc)
@@ -95,8 +96,7 @@
 (use-package sly)
 (use-package smart-mode-line
              :init (add-hook 'after-init-hook #'sml/setup)
-             :config
-             (setq sml/no-confirm-load-theme t))
+             :config (setq sml/no-confirm-load-theme t))
 (use-package smartparens
              :config (smartparens-global-mode t))
 (use-package srcery-theme)
