@@ -121,6 +121,17 @@
 ;;; Add directory to load path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/"))
 
+;;; Backup settings
+(setq
+ backup-by-copying t
+ backup-directory-alist `(("." . ,(expand-file-name "~/.emacs.d/.backup.d/")))
+ delete-old-versions t
+ kept-new-versions 10
+ kept-old-versions 5
+ undo-tree-auto-save-history t
+ undo-tree-history-directory-alist `(("." . ,(expand-file-name "~/.emacs.d/.undo.d/")))
+ version-control t)
+
 ;;; Ensure UTF-8 usage
 (prefer-coding-system 'utf-8-unix)
 (set-charset-priority 'unicode)
@@ -195,7 +206,6 @@
  history-length 1000 ; history-length t
  inhibit-startup-screen t
  load-prefer-newer t
- make-backup-files nil
  read-buffer-completion-ignore-case t
  require-final-newline t
  ring-bell-function #'ignore
