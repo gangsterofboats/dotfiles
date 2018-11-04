@@ -1,14 +1,14 @@
-""" No Vi compatibility (must be set first)
+"""" No Vi compatibility (must be set first)
 set nocompatible
 set cpoptions=""
 
-""" Packages
+"""" Packages
 call plug#begin(expand('~/.vim/plugged'))
 
-"" Vim-Plug itself
+""" Vim-Plug itself
 Plug 'junegunn/vim-plug'
 
-"" General packages
+""" General packages
 Plug 'Alvarocz/vim-fresh'
 Plug 'Alvarocz/vim-northpole'
 Plug 'bluz71/vim-moonfly-colors'
@@ -31,96 +31,119 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/grep.vim'
 Plug 'Yggdroot/indentLine'
 
-"" Language packages
+""" Language packages
 
-" elixir
-Plug 'elixir-lang/vim-elixir'
+""" Elixir
 Plug 'carlosgaldino/elixir-snippets'
+Plug 'elixir-lang/vim-elixir'
 
-" go
-" Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-
-" html
-Plug 'hail2u/vim-css3-syntax'
+""" HTML
 Plug 'gorodinskiy/vim-coloresque'
-Plug 'tpope/vim-haml'
+Plug 'hail2u/vim-css3-syntax'
 Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-haml'
 
-" javascript
+""" Javascript
 Plug 'pangloss/vim-javascript'
 
-" perl
+""" Perl
+Plug 'c9s/perlomni.vim'
 Plug 'vim-perl/vim-perl'
 Plug 'vim-perl/vim-perl6'
-Plug 'c9s/perlomni.vim'
 
-" python
+""" Python
 Plug 'raimon49/requirements.txt.vim'
 
-" rust
+""" Rust
 Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-""" Settings
+"""" Settings
 
-" Read outside changes
-set autoread
+""" Backup file settings
+execute "set backupdir^=" . expand('~/.vim/.backup//')
+execute "set directory^=" . expand('~/.vim/.swp//')
+execute "set undodir^=" . expand('~/.vim/.undo//')
+set backup
+set swapfile
+set undofile
+set writebackup
 
-" Enable command-line completion
+""" Enable command-line completion
 set wildmenu
 set wildmode=list:longest
 
-" Status bar settings
-set laststatus=2
-set ruler
-set showcmd
+""" Enable visual selection using the mouse in terminals
+if has('mouse')
+  set mouse=a
+endif
 
-" Search settings
-set incsearch
-set smartcase
-
-" File settings
+""" File settings
 set encoding=utf8
 set fileformat=unix
 set fileformats=unix,dos,mac
 
-" Backup file settings
-set writebackup
-set noswapfile
+""" GUI settings
+colorscheme moonfly
+set guifont=Consolas\ 12
+set lines=30 columns=100
+set linespace=0
+set titlestring=%t\ -\ Vim
 
-" Indent settings
+""" Indent settings
+set autoindent
 set expandtab
-set smarttab
 set shiftwidth=4
+set smartindent
+set smarttab
 set softtabstop=4
 set tabstop=4
-set autoindent
-set smartindent
 
-" Set line numbers
+""" Keymaps
+map Q gq
+map Y y$
+inoremap <C-U> <C-G>u<C-U>
+
+""" Move directory to match current file
+set autochdir
+set browsedir=buffer
+
+""" Read outside changes
+set autoread
+
+""" Search settings
+set incsearch
+set smartcase
+
+""" Set line numbers
 set number
 
-" GUI settings
-set guifont=Consolas\ 12
-colorscheme moonfly
-set lines=30 columns=100
-set titlestring=%t\ -\ Vim
-set linespace=0
+""" Status bar settings
+set laststatus=2
+set ruler
+set showcmd
 
-" Move directory to match current file
-set browsedir=buffer
-set autochdir
-
-" Keymaps
-map Y y$
-
-" Other settings
+""" Other settings
+let c_comment_strings=1
+packadd! matchit
 set backspace=indent,eol,start
+set display=truncate
+set formatoptions+=j
+set hidden
+set history=1000
 set nolazyredraw
 set scrolloff=5
 set showmatch
+set tabpagemax=50
 set textwidth=80
-set history=1000
-packadd! matchit
-set hidden
+set ttimeout
+set ttimeoutlen=100
+
+"""" Functions
+
+""" Diff current loaded buffer and the originating file
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
