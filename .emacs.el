@@ -23,6 +23,7 @@
 ;;; Packages
 (use-package adoc-mode)
 (use-package alchemist)
+(use-package auth-source-pass)
 (use-package cc-mode
              :config
              (setq c-default-style "bsd")
