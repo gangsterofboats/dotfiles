@@ -30,7 +30,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/grep.vim'
 Plug 'Yggdroot/indentLine'
 
-"" Language packages
+""" Language packages
 
 """ Elixir
 Plug 'elixir-lang/vim-elixir'
@@ -68,7 +68,7 @@ set backup
 set undofile
 set writebackup
 
-" Enable command-line completion
+""" Enable command-line completion
 set wildmode=list:longest
 
 """ Enable visual selection using the mouse in terminals
