@@ -12,7 +12,7 @@
         ("org" . 20)
         ("gnu" . 10)))
 
-;;; Use Package settings
+;;; Enable Use-Package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -88,7 +88,11 @@
              :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode t))))
 (use-package ox-asciidoc)
 (use-package ox-rst)
-(use-package paradox)
+(use-package paradox
+             :config
+             (setq 
+              paradox-execute-asynchronously nil
+              paradox-github-token t))
 (use-package perl6-mode)
 (use-package powershell)
 (use-package racket-mode)
@@ -104,6 +108,7 @@
 (use-package srcery-theme)
 (use-package tide)
 (use-package tuareg)
+(use-package vdiff)
 (use-package xah-elisp-mode)
 (use-package yaml-mode)
 (use-package yasnippet
