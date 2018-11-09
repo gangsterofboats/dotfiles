@@ -108,7 +108,6 @@
 (use-package srcery-theme)
 (use-package tide)
 (use-package tuareg)
-(use-package vdiff)
 (use-package xah-elisp-mode)
 (use-package yaml-mode)
 (use-package yasnippet
