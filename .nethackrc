@@ -1,3 +1,16 @@
 OPTIONS=altmeta
+OPTIONS=autodig
 OPTIONS=!autopickup
+OPTIONS=autoquiver
 OPTIONS=color
+OPTIONS=hilite_pet
+OPTIONS=hilite_pile
+OPTIONS=hitpointbar
+OPTIONS=large_font
+OPTIONS=lit_corridor
+OPTIONS=menucolors
+OPTIONS=perm_invent
+OPTIONS=pushweapon
+OPTIONS=showexp
+OPTIONS=statushilites:5
+OPTIONS=time
