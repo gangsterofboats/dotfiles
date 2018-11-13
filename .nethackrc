@@ -1,2 +1,3 @@
 OPTIONS=altmeta
+OPTIONS=!autopickup
 OPTIONS=color
