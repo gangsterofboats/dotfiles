@@ -35,6 +35,7 @@
               cobol-format-style 'lower-case
               cobol-source-format 'free))
 (use-package crystal-mode)
+(use-package csv-mode)
 (use-package d-mode)
 (use-package darkokai-theme)
 (use-package deft)
