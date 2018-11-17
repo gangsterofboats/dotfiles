@@ -109,6 +109,7 @@
 (use-package srcery-theme)
 (use-package tide)
 (use-package tuareg)
+(use-package vimrc-mode)
 (use-package xah-elisp-mode)
 (use-package yaml-mode)
 (use-package yasnippet
