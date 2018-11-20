@@ -211,7 +211,8 @@
  default-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
  frame-title-format '("" "%b - Emacs " emacs-version)
  gc-cons-threshold (* 100 1024 1024)
- history-length 1000 ; history-length t
+ history-delete-duplicates t
+ history-length t ; history-length 1000
  inhibit-startup-screen t
  load-prefer-newer t
  read-buffer-completion-ignore-case t
