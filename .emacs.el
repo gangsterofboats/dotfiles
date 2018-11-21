@@ -69,13 +69,13 @@
 (use-package js2-mode
              :mode
              ("\\.js$" . js2-mode)
-             ("\\.json$" . js2-jsx-mode)
+             ;; ("\\.json$" . js2-jsx-mode)
              :config
              (setq
               js-indent-level 4
               js2-indent-level 4
               js2-basic-offset 4))
-;; (use-package json-mode)
+(use-package json-mode)
 (use-package julia-mode)
 (use-package lua-mode)
 (use-package markdown-mode)
