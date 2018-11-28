@@ -91,7 +91,7 @@
 (use-package ox-rst)
 (use-package paradox
              :config
-             (setq 
+             (setq
               paradox-execute-asynchronously nil
               paradox-github-token t))
 (use-package perl6-mode)
