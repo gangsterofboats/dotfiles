@@ -42,6 +42,7 @@
 (use-package emmet-mode
              :hook (sgml-mode css-mode))
 (use-package ergoemacs-mode
+             :demand t
              :config
              (ergoemacs-mode t)
              (setq
@@ -55,6 +56,7 @@
 (use-package go-mode)
 (use-package haskell-mode)
 (use-package helm
+             :demand t
              :config (helm-mode t))
 (use-package helm-swoop
              :bind ("C-f" . helm-swoop))
