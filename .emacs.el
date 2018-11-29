@@ -23,8 +23,6 @@
 ;;; Packages
 (use-package adoc-mode)
 (use-package alchemist)
-(use-package auth-source-pass
-             :pin melpa)
 (use-package cc-mode
              :config
              (setq c-default-style "bsd")
@@ -38,7 +36,6 @@
 (use-package csv-mode)
 (use-package d-mode)
 (use-package darkokai-theme)
-(use-package deft)
 (use-package emmet-mode
              :hook (sgml-mode css-mode))
 (use-package ergoemacs-mode
@@ -69,7 +66,6 @@
 (use-package js2-mode
              :mode
              ("\\.js$" . js2-mode)
-             ;; ("\\.json$" . js2-jsx-mode)
              :config
              (setq
               js-indent-level 4
@@ -85,8 +81,6 @@
 (use-package org
              :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo))
              :ensure org-plus-contrib)
-(use-package org-bullets
-             :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode t))))
 (use-package ox-asciidoc)
 (use-package ox-rst)
 (use-package paradox
@@ -99,7 +93,6 @@
 (use-package racket-mode)
 (use-package rainbow-mode)
 (use-package rust-mode)
-;; (use-package slime)
 (use-package sly)
 (use-package smart-mode-line
              :init (add-hook 'after-init-hook #'sml/setup)
@@ -144,9 +137,7 @@
 ;;; Ensure UTF-8 usage
 (prefer-coding-system 'utf-8-unix)
 (set-charset-priority 'unicode)
-;; (set-default-coding-systems 'utf-8)
 (set-keyboard-coding-system 'utf-8)
-;; (set-language-environment "UTF-8")
 (set-selection-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
