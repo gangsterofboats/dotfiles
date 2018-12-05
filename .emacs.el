@@ -134,6 +134,15 @@
  undo-tree-history-directory-alist `(("." . ,(expand-file-name "~/.emacs.d/.undo.d/")))
  version-control t)
 
+;;; CPerl settings
+(defalias 'perl-mode 'cperl-mode) ; Use CPerl Mode for Perl 5
+(setq
+ cperl-brace-offset -2
+ cperl-extra-newline-before-brace t
+ cperl-hairy t
+ cperl-indent-level 4
+ cperl-merge-trailing-else nil)
+
 ;;; Ensure UTF-8 usage
 (prefer-coding-system 'utf-8-unix)
 (set-charset-priority 'unicode)
@@ -190,13 +199,10 @@
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (blink-cursor-mode t)
 (column-number-mode t)
-(defalias 'perl-mode 'cperl-mode) ; Use CPerl Mode for Perl 5
 (display-time-mode t)
 (global-subword-mode t)
 (global-undo-tree-mode t)
 (setq
- cperl-hairy t
- cperl-indent-level 4
  cursor-in-non-selected-windows nil
  custom-file (expand-file-name "~/.custom.el") ; (setq custom-file (make-temp-file ""))
  initial-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
