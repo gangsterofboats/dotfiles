@@ -137,7 +137,7 @@
 ;;; CPerl settings
 (defalias 'perl-mode 'cperl-mode) ; Use CPerl Mode for Perl 5
 (setq
- cperl-brace-offset -2
+ cperl-brace-offset 0
  cperl-extra-newline-before-brace t
  cperl-hairy t
  cperl-indent-level 4
