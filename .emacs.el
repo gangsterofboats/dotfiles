@@ -135,12 +135,20 @@
  version-control t)
 
 ;;; CPerl settings
-(defalias 'perl-mode 'cperl-mode) ; Use CPerl Mode for Perl 5
+(add-to-list 'auto-mode-alist '("\\.\\([pP][Llm]\\|al\\)\\'" . cperl-mode))
+(add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
+(add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
+(add-to-list 'interpreter-mode-alist '("miniperl" . cperl-mode))
 (setq
  cperl-brace-offset 0
+ cperl-continued-brace-offset -4
+ cperl-continued-statement-offset 4
  cperl-extra-newline-before-brace t
  cperl-hairy t
+ cperl-highlight-variables-indiscriminately t
  cperl-indent-level 4
+ cperl-indent-wrt-brace nil
+ cperl-label-offset -4
  cperl-merge-trailing-else nil)
 
 ;;; Ensure UTF-8 usage
