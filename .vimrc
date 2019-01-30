@@ -86,7 +86,7 @@ set fileformats=unix,dos,mac
 
 """ GUI settings
 colorscheme moonfly
-set guifont=Consolas\ 12
+set guifont=Hack\ 12
 set lines=30 columns=100
 set linespace=0
 set titlestring=%t\ -\ Vim
