@@ -189,7 +189,7 @@
 ;; (load-theme 'zerodark t)
 
 ;;; Set font
-(set-face-font 'default "Consolas-12")
+(set-face-font 'default "Hack-12")
 
 ;;; View Mode
 (require 'view)
