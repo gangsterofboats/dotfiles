@@ -94,6 +94,7 @@
 (use-package rainbow-mode)
 (use-package rust-mode)
 (use-package sly)
+(use-package smalltalk-mode)
 (use-package smart-mode-line
              :init (add-hook 'after-init-hook #'sml/setup)
              :config (setq sml/no-confirm-load-theme t))
@@ -114,8 +115,6 @@
 
 ;;; Local packages
 (use-package arc
-             :load-path "lisp/")
-(use-package smalltalk-mode
              :load-path "lisp/")
 
 ;;;; Settings
