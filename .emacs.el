@@ -12,110 +12,124 @@
         ("org" . 20)
         ("gnu" . 10)))
 
-;;; Enable Use-Package
-(unless (package-installed-p 'use-package)
+;;; Enable Leaf
+(unless (package-installed-p 'leaf)
   (package-refresh-contents)
-  (package-install 'use-package))
+  (package-install 'leaf))
 (eval-when-compile
-  (require 'use-package))
-(setq use-package-always-ensure t)
+  (require 'leaf))
 
 ;;; Packages
-(use-package adoc-mode)
-(use-package alchemist)
-(use-package cc-mode
-             :config
-             (setq c-default-style "bsd")
-             (setq-default c-basic-offset 4))
-(use-package cobol-mode
-             :config
-             (setq
-              cobol-format-style 'lower-case
-              cobol-source-format 'free))
-(use-package crystal-mode)
-(use-package csv-mode)
-(use-package d-mode)
-(use-package darkokai-theme)
-(use-package emmet-mode
-             :hook (sgml-mode css-mode))
-(use-package ergoemacs-mode
-             :demand t
-             :config
-             (ergoemacs-mode t)
-             (setq
-              ergoemacs-theme nil
-              ergoemacs-keyboard-layout "us"))
-(use-package erlang)
-(use-package ess)
-(use-package expand-region
-             :bind ("C-," . er/expand-region))
-(use-package fountain-mode)
-(use-package go-mode)
-(use-package haskell-mode)
-(use-package helm
-             :demand t
-             :config (helm-mode t))
-(use-package helm-swoop
-             :bind ("C-f" . helm-swoop))
-(use-package helpful
-             :bind
-             (("C-h f" . helpful-callable)
-              ("C-h v" . helpful-variable)
-              ("C-h k" . helpful-key)
-              ("C-c C-d" . helpful-at-point)))
-(use-package js2-mode
-             :mode
-             ("\\.js$" . js2-mode)
-             :config
-             (setq
-              js-indent-level 4
-              js2-indent-level 4
-              js2-basic-offset 4))
-(use-package json-mode)
-(use-package julia-mode)
-(use-package lua-mode)
-(use-package markdown-mode)
-(use-package nim-mode)
-(use-package noctilux-theme)
-(use-package nov)
-(use-package org
-             :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo))
-             :ensure org-plus-contrib)
-(use-package ox-asciidoc)
-(use-package ox-rst)
-(use-package paradox
-             :config
-             (setq
-              paradox-execute-asynchronously nil
-              paradox-github-token t))
-(use-package perl6-mode)
-(use-package powershell)
-(use-package racket-mode)
-(use-package rainbow-mode)
-(use-package rust-mode)
-(use-package sly)
-(use-package smalltalk-mode)
-(use-package smart-mode-line
-             :init (add-hook 'after-init-hook #'sml/setup)
-             :config (setq sml/no-confirm-load-theme t))
-(use-package smartparens
-             :config (smartparens-global-mode t))
-(use-package sql-indent)
-(use-package srcery-theme)
-(use-package tide)
-(use-package tuareg)
-(use-package vimrc-mode)
-(use-package xah-elisp-mode)
-(use-package yaml-mode)
-(use-package yasnippet
-             :bind ("C-^" . yas-global-mode))
-(use-package yasnippet-snippets)
-(use-package zerodark-theme)
-(use-package zig-mode)
+(leaf adoc-mode :ensure t)
+(leaf alchemist :ensure t)
+(leaf cc-mode
+  :ensure t
+  :config
+  (setq c-default-style "bsd")
+  (setq-default c-basic-offset 4))
+(leaf cobol-mode
+  :ensure t
+  :config
+  (setq
+   cobol-format-style 'lower-case
+   cobol-source-format 'free))
+(leaf crystal-mode :ensure t)
+(leaf csv-mode :ensure t)
+(leaf d-mode :ensure t)
+(leaf darkokai-theme :ensure t)
+(leaf emmet-mode
+  :ensure t
+  :hook ((sgml-mode . css-mode)))
+(leaf ergoemacs-mode
+  :ensure t
+  :leaf-defer nil
+  :config
+  (ergoemacs-mode t)
+  (setq
+   ergoemacs-theme nil
+   ergoemacs-keyboard-layout "us"))
+(leaf erlang :ensure t)
+(leaf ess :ensure t)
+(leaf expand-region
+  :ensure t
+  :bind (("C-," . er/expand-region)))
+(leaf fountain-mode :ensure t)
+(leaf go-mode :ensure t)
+(leaf haskell-mode :ensure t)
+(leaf helm
+  :ensure t
+  :leaf-defer nil
+  :config (helm-mode t))
+(leaf helm-swoop
+  :after ergoemacs-mode
+  :ensure t
+  :bind (("C-f" . helm-swoop)))
+(leaf helpful
+  :ensure t
+  :bind
+  (("C-h f" . helpful-callable)
+   ("C-h v" . helpful-variable)
+   ("C-h k" . helpful-key)
+   ("C-c C-d" . helpful-at-point)))
+(leaf js2-mode
+  :ensure t
+  :mode ("\\.js$" . js2-mode)
+  :config
+  (setq
+   js-indent-level 4
+   js2-indent-level 4
+   js2-basic-offset 4))
+(leaf json-mode :ensure t)
+(leaf julia-mode :ensure t)
+(leaf lua-mode :ensure t)
+(leaf markdown-mode :ensure t)
+(leaf nim-mode :ensure t)
+(leaf noctilux-theme :ensure t)
+(leaf nov :ensure t)
+(leaf org
+  :ensure t
+  :init (leaf org-plus-contrib  :ensure t)
+  :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo)))
+(leaf ox-asciidoc :ensure t)
+(leaf ox-rst :ensure t)
+(leaf paradox
+  :ensure t
+  :config
+  (setq
+   paradox-execute-asynchronously nil
+   paradox-github-token t))
+(leaf perl6-mode :ensure t)
+(leaf powershell :ensure t)
+(leaf racket-mode :ensure t)
+(leaf rainbow-mode :ensure t)
+(leaf rust-mode :ensure t)
+(leaf sly :ensure t)
+(leaf smalltalk-mode :ensure t)
+(leaf smart-mode-line
+  :ensure t
+  :init (add-hook 'after-init-hook #'sml/setup)
+  :config (setq sml/no-confirm-load-theme t))
+(leaf smartparens
+  :ensure t
+  :config (smartparens-global-mode t))
+(leaf sql-indent :ensure t)
+(leaf srcery-theme :ensure t)
+(leaf tide :ensure t)
+(leaf tuareg :ensure t)
+(leaf vimrc-mode :ensure t)
+(leaf xah-elisp-mode :ensure t)
+(leaf yaml-mode :ensure t)
+(leaf yasnippet
+  :ensure t
+  :bind (("C-^" . yas-global-mode)))
+(leaf yasnippet-snippets :ensure t)
+(leaf zerodark-theme :ensure t)
+(leaf zig-mode :ensure t)
 
 ;;; Local packages
-(use-package arc
-             :load-path "lisp/")
+(leaf arc
+  :load-path `,(expand-file-name "lisp/arc.el" user-emacs-directory)
+  :mode ("\\.arc$" . arc-mode))
 
 ;;;; Settings
 
