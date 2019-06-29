@@ -241,6 +241,7 @@
 (setq-default
  fill-column 80
  indent-tabs-mode nil
+ lexical-binding t
  tab-width 4)
 (show-paren-mode t)
 
