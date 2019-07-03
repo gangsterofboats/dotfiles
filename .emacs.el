@@ -115,6 +115,7 @@
 (leaf sql-indent :ensure t)
 (leaf srcery-theme :ensure t)
 (leaf tide :ensure t)
+(leaf tramp :ensure t)
 (leaf tuareg :ensure t)
 (leaf vimrc-mode :ensure t)
 (leaf xah-elisp-mode :ensure t)
