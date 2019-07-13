@@ -12,112 +12,112 @@
         ("org" . 20)
         ("gnu" . 10)))
 
-;;; Enable Leaf
-(unless (package-installed-p 'leaf)
+;;; Enable Use Package
+(unless (package-installed-p 'use-package)
   (package-refresh-contents)
-  (package-install 'leaf))
+  (package-install 'use-package))
 (eval-when-compile
-  (require 'leaf))
-(leaf leaf
- :custom ((leaf-defaults . '(:ensure t))))
+  (require 'use-package))
+(setq use-package-always-ensure t)
 
 ;;; Packages
-(leaf adoc-mode)
-(leaf alchemist)
-(leaf cc-mode
+(use-package adoc-mode)
+(use-package alchemist)
+(use-package cc-mode
   :config
   (setq c-default-style "bsd")
   (setq-default c-basic-offset 4))
-(leaf cobol-mode
+(use-package cobol-mode
   :config
   (setq
    cobol-format-style 'lower-case
    cobol-source-format 'free))
-(leaf crystal-mode)
-(leaf csv-mode)
-(leaf d-mode)
-(leaf darkokai-theme)
-(leaf emmet-mode
-  :hook ((sgml-mode . css-mode)))
-(leaf ergoemacs-mode
-  :leaf-defer nil
+(use-package crystal-mode)
+(use-package csv-mode)
+(use-package d-mode)
+(use-package darkokai-theme)
+(use-package emmet-mode
+  :hook (sgml-mode css-mode))
+(use-package ergoemacs-mode
+  :demand t
   :config
   (ergoemacs-mode t)
   (setq
    ergoemacs-theme nil
    ergoemacs-keyboard-layout "us"))
-(leaf erlang)
-(leaf ess)
-(leaf expand-region
-  :bind (("C-," . er/expand-region)))
-(leaf fountain-mode)
-(leaf go-mode)
-(leaf haskell-mode)
-(leaf helm
-  :leaf-defer nil
+(use-package erlang)
+(use-package ess)
+(use-package expand-region
+  :bind ("C-," . er/expand-region))
+(use-package fountain-mode)
+(use-package go-mode)
+(use-package haskell-mode)
+(use-package helm
+  :demand t
   :config (helm-mode t))
-(leaf helm-swoop
-  :after ergoemacs-mode
-  :bind (("C-f" . helm-swoop)))
-(leaf helpful
+(use-package helm-swoop
+  :bind ("C-f" . helm-swoop))
+(use-package helpful
   :bind
   (("C-h f" . helpful-callable)
    ("C-h v" . helpful-variable)
    ("C-h k" . helpful-key)
    ("C-c C-d" . helpful-at-point)))
-(leaf js2-mode
-  :mode ("\\.js$" . js2-mode)
+(use-package js2-mode
+  :mode
+  ("\\.js$" . js2-mode)
   :config
   (setq
    js-indent-level 4
    js2-indent-level 4
    js2-basic-offset 4))
-(leaf json-mode)
-(leaf julia-mode)
-(leaf lua-mode)
-(leaf markdown-mode)
-(leaf nim-mode)
-(leaf noctilux-theme)
-(leaf nov)
-(leaf org
-  :init (leaf org-plus-contrib)
-  :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo)))
-(leaf ox-asciidoc)
-(leaf ox-rst)
-(leaf paradox
+(use-package json-mode)
+(use-package julia-mode)
+(use-package lua-mode)
+(use-package markdown-mode)
+(use-package nim-mode)
+(use-package noctilux-theme)
+(use-package nov)
+(use-package org
+  :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo))
+  :ensure org-plus-contrib)
+(use-package ox-asciidoc)
+(use-package ox-rst)
+(use-package paradox
   :config
   (setq
    paradox-execute-asynchronously nil
    paradox-github-token t))
-(leaf perl6-mode)
-(leaf powershell)
-(leaf racket-mode)
-(leaf rainbow-mode)
-(leaf rust-mode)
-(leaf sly)
-(leaf smalltalk-mode)
-(leaf smart-mode-line
+(use-package perl6-mode)
+(use-package powershell)
+(use-package racket-mode)
+(use-package rainbow-mode)
+(use-package rust-mode)
+(use-package sly)
+(use-package smalltalk-mode)
+(use-package smart-mode-line
   :init (add-hook 'after-init-hook #'sml/setup)
   :config (setq sml/no-confirm-load-theme t))
-(leaf smartparens
+(use-package smartparens
   :config (smartparens-global-mode t))
-(leaf sql-indent)
-(leaf srcery-theme)
-(leaf tide)
-(leaf tuareg)
-(leaf vimrc-mode)
-(leaf xah-elisp-mode)
-(leaf yaml-mode)
-(leaf yasnippet
-  :bind (("C-^" . yas-global-mode)))
-(leaf yasnippet-snippets)
-(leaf zerodark-theme)
-(leaf zig-mode)
+(use-package sql-indent)
+(use-package srcery-theme)
+(use-package tide)
+(use-package tuareg)
+(use-package vimrc-mode)
+(use-package xah-elisp-mode)
+(use-package yaml-mode)
+(use-package yasnippet
+  :bind ("C-^" . yas-global-mode))
+(use-package yasnippet-snippets)
+(use-package zerodark-theme)
+(use-package zig-mode)
 
 ;;; Local packages
-(leaf arc
-  :load-path `,(expand-file-name "lisp/arc.el" user-emacs-directory)
-  :mode ("\\.arc$" . arc-mode))
+(use-package arc
+  :load-path "lisp/"
+  :mode
+  ("\\.arc$" . arc-mode))
 
 ;;;; Settings
 
