@@ -2,8 +2,12 @@
 
 ;;; Package manager settings
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t) ; MELPA
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)     ; Org Mode
+;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t) ; MELPA
+;; (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)     ; Org Mode
+(setq package-archives
+      '(("gnu" . "https://elpa.gnu.org/packages/") ; GNU
+        ("melpa" . "https://melpa.org/packages/")  ; MELPA
+        ("org" . "https://orgmode.org/elpa/")))    ; Org Mode
 (unless package--initialized (package-initialize))
 
 ;;; Package archives order
