@@ -194,7 +194,7 @@
 ;; (load-theme 'zerodark t)
 
 ;;; Set font
-(set-face-font 'default "Hack-12")
+(set-face-font 'default "Cascadia Code-13")
 
 ;;; View Mode
 (require 'view)
