@@ -1,20 +1,6 @@
+;;;; -*- lexical-binding: t -*-
+
 ;;;; Packages
-
-;;; Package manager settings
-(require 'package)
-;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t) ; MELPA
-;; (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)     ; Org Mode
-(setq package-archives
-      '(("gnu" . "https://elpa.gnu.org/packages/") ; GNU
-        ("melpa" . "https://melpa.org/packages/")  ; MELPA
-        ("org" . "https://orgmode.org/elpa/")))    ; Org Mode
-(unless package--initialized (package-initialize))
-
-;;; Package archives order
-(setq package-archive-priorities
-      '(("melpa" . 20)
-        ("org" . 20)
-        ("gnu" . 10)))
 
 ;;; Enable Use Package
 (unless (package-installed-p 'use-package)
@@ -27,10 +13,6 @@
 ;;; Packages
 (use-package adoc-mode)
 (use-package alchemist)
-(use-package cc-mode
-  :config
-  (setq c-default-style "bsd")
-  (setq-default c-basic-offset 4))
 (use-package cobol-mode
   :config
   (setq
@@ -139,6 +121,10 @@
  undo-tree-history-directory-alist `(("." . ,(expand-file-name "~/.emacs.d/.undo.d/")))
  version-control t)
 
+;;; C/C++/CC-Mode Settings
+(setq c-default-style "bsd")
+(setq-default c-basic-offset 4)
+
 ;;; CPerl settings
 (add-to-list 'auto-mode-alist '("\\.\\([pP][Llm]\\|al\\)\\'" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
@@ -217,14 +203,15 @@
 (global-undo-tree-mode t)
 (setq
  cursor-in-non-selected-windows nil
- custom-file (expand-file-name "~/.custom.el") ; (setq custom-file (make-temp-file ""))
- initial-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
- default-frame-alist '((width . 125) (height . 30) (vertical-scroll-bars . nil))
+ custom-file (expand-file-name "~/.emacs.d/custom.el") ; (setq custom-file (make-temp-file ""))
+ initial-frame-alist '((width . 125) (height . 30))
+ default-frame-alist '((width . 125) (height . 30))
  frame-title-format '("" "%b - Emacs " emacs-version)
  gc-cons-threshold (* 100 1024 1024)
  history-delete-duplicates t
  history-length t ; history-length 1000
  inhibit-startup-screen t
+ lexical-binding t
  load-prefer-newer t
  read-buffer-completion-ignore-case t
  require-final-newline t
