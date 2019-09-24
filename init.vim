@@ -82,7 +82,7 @@ set fileformats=unix,dos,mac
 
 """ GUI settings
 colorscheme moonfly
-set guifont=Cascadia\ Code:h13
+set guifont=Hack:h12
 set lines=30 columns=100
 set title titlestring=%t\ -\ Neovim
 
