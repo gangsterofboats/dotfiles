@@ -15,5 +15,7 @@
         ("gnu" . 10)))
 
 ;; Other settings
-(setq package-quickstart t)
+(setq
+ package-menu-async nil
+ package-quickstart t)
 (tool-bar-mode -1)
