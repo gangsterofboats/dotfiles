@@ -193,6 +193,8 @@
 (global-set-key (kbd "M-!") #'shell-command)
 (global-set-key (kbd "C-x C-d") #'dired) ; Switch these two.  Given buffer list keybindings, makes more sense
 (global-set-key (kbd "C-x d") #'list-directory)
+(unless (eq (key-binding (kbd "M-j")) #'backward-char)
+        (global-set-key (kbd "M-j") #'backward-char)) ; Weird Ergoemacs bug
 
 ;;; Other settings
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
