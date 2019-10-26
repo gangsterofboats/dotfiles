@@ -22,8 +22,12 @@
 (use-package csv-mode)
 (use-package d-mode)
 (use-package darkokai-theme)
+(use-package elpy)
 (use-package emmet-mode
   :hook (sgml-mode css-mode))
+(use-package enh-ruby-mode
+  :mode
+  (("\\.rb\\'" . ruby-mode)))
 (use-package ergoemacs-mode
   :demand t
   :config
@@ -202,11 +206,13 @@
 (global-subword-mode t)
 (global-undo-tree-mode t)
 (setq
+ confirm-kill-emacs 'y-or-n-p
  cursor-in-non-selected-windows nil
  custom-file (expand-file-name "~/.emacs.d/custom.el") ; (setq custom-file (make-temp-file ""))
  initial-frame-alist '((width . 125) (height . 30))
  default-frame-alist '((width . 125) (height . 30))
  frame-title-format '("" "%b - Emacs " emacs-version)
+ ;; fringes-outside-margins t
  gc-cons-threshold (* 100 1024 1024)
  history-delete-duplicates t
  history-length t ; history-length 1000
@@ -215,6 +221,7 @@
  read-buffer-completion-ignore-case t
  require-final-newline t
  ring-bell-function #'ignore
+ save-interprogram-paste-before-kill t
  vc-follow-symlinks t)
 (setq-default
  fill-column 80
