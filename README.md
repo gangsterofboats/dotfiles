@@ -2,7 +2,7 @@
 My personal dotfiles
 
 * .bashrc: For the Bourne Again shell (bash) (uses Oh My Bash)
-* gvimrc: For GVim
+* gvimrc: For gVim
 * init.el and early-init.el: For GNU Emacs
 * init.vim: For NeoVim, basically the same file as vimrc but modified a little.
 * .nanorc: For GNU Nano
