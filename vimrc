@@ -80,9 +80,9 @@ call plug#end()
 """" Settings
 
 """ Backup file settings
-execute "set backupdir^=" . expand('~/.vim/.backup//')
-execute "set directory^=" . expand('~/.vim/.swp//')
-execute "set undodir^=" . expand('~/.vim/.undo//')
+execute 'set backupdir^=' . expand('~/.vim/.backup//')
+execute 'set directory^=' . expand('~/.vim/.swp//')
+execute 'set undodir^=' . expand('~/.vim/.undo//')
 set backup
 set swapfile
 set undofile
@@ -101,13 +101,6 @@ endif
 set encoding=utf8
 set fileformat=unix
 set fileformats=unix,dos,mac
-
-""" GUI settings
-colorscheme moonfly
-set guifont=Hack\ 12
-set lines=30 columns=100
-set linespace=0
-set titlestring=%t\ -\ Vim
 
 """ Indent settings
 set autoindent
@@ -157,6 +150,10 @@ set tabpagemax=50
 set textwidth=80
 set ttimeout
 set ttimeoutlen=100
+
+"" Move viminfo file
+
+set viminfo+=n~/.vim/viminfo
 
 """" Functions
 
