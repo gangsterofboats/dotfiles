@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Vim configuration -- .vimrc file                                         ""
+"" Vim configuration -- vimrc file                                          ""
 "" Copyright (C) 2019 Michael Wiseman                                       ""
 ""                                                                          ""
 "" This program is free software: you can redistribute it and/or modify     ""
