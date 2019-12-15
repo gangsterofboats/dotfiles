@@ -96,7 +96,7 @@ set mouse=a
 """ File settings
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
+set fileencodings=ucs-bom,utf-8,default,latin1
 set fileformat=unix
 set fileformats=unix,dos,mac
 
