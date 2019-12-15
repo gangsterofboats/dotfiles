@@ -1,5 +1,5 @@
 function fish_greeting
-    fortune -ac
+    fortune -ace
 end
 
 # opam configuration
