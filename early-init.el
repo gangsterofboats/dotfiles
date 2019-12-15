@@ -17,9 +17,6 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.   ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;; FIX for something
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-
 ;;; Package archives
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/packages/") ; GNU
