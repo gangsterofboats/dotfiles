@@ -3,6 +3,7 @@ My personal dotfiles
 
 * .bashrc: For the Bourne Again shell (bash) (uses [Oh My Bash](https://github.com/ohmybash/oh-my-bash))
 * .ccl-init.lisp: For [Clozure Common Lisp](https://ccl.clozure.com/)
+* config.fish: For the [Fish shell](https://fishshell.com/)
 * init.el and early-init.el: For GNU Emacs
 * init.vim and ginit.vim: For [Neovim](https://neovim.io/)
 * .nanorc: For GNU Nano
