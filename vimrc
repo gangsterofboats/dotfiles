@@ -84,21 +84,18 @@ execute 'set backupdir^=' . expand('~/.vim/.backup//')
 execute 'set directory^=' . expand('~/.vim/.swp//')
 execute 'set undodir^=' . expand('~/.vim/.undo//')
 set backup
-set swapfile
 set undofile
-set writebackup
+" set writebackup
 
 """ Enable command-line completion
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,full
 
 """ Enable visual selection using the mouse in terminals
-if has('mouse')
-  set mouse=a
-endif
+set mouse=a
 
 """ File settings
-set encoding=utf8
+set encoding=utf-8
 set fileformat=unix
 set fileformats=unix,dos,mac
 
@@ -144,8 +141,7 @@ set backspace=indent,eol,start
 set display=truncate
 set formatoptions+=j
 set hidden
-set history=1000
-set nolazyredraw
+set history=10000
 set nrformats+=alpha
 set scrolloff=5
 set showmatch
@@ -162,6 +158,6 @@ set viminfo+=n~/.vim/viminfo
 
 """ Diff current loaded buffer and the originating file
 if !exists(':DiffOrig')
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
