@@ -85,7 +85,6 @@ execute 'set directory^=' . expand('~/.vim/.swp//')
 execute 'set undodir^=' . expand('~/.vim/.undo//')
 set backup
 set undofile
-" set writebackup
 
 """ Enable command-line completion
 set wildmenu
