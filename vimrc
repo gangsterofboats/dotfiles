@@ -112,6 +112,7 @@ set softtabstop=4
 set tabstop=4
 
 """ Keymaps
+let mapleader='\'
 map Q gq
 map Y y$
 inoremap <C-U> <C-G>u<C-U>
@@ -138,12 +139,14 @@ set showcmd
 """ Other settings
 let c_comment_strings=1
 packadd! matchit
+set background=dark
 set backspace=indent,eol,start
 set display=truncate
 set formatoptions+=j
 set hidden
 set history=1000
 set nolazyredraw
+set nrformats+=alpha
 set scrolloff=5
 set showmatch
 set tabpagemax=50
@@ -158,7 +161,7 @@ set viminfo+=n~/.vim/viminfo
 """" Functions
 
 """ Diff current loaded buffer and the originating file
-if !exists(":DiffOrig")
+if !exists(':DiffOrig')
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
