@@ -51,8 +51,8 @@ Plug 'Yggdroot/indentLine'
 """ Language packages
 
 """ Elixir
-Plug 'elixir-lang/vim-elixir'
 Plug 'carlosgaldino/elixir-snippets'
+Plug 'elixir-lang/vim-elixir'
 
 """ HTML
 Plug 'gorodinskiy/vim-coloresque'
@@ -79,30 +79,22 @@ call plug#end()
 """" Settings
 
 """ Backup file settings
-execute "set backupdir=" . expand('~/.local/share/nvim/backup//')
-execute "set directory=" . expand('~/.local/share/nvim/swap//')
-execute "set undodir=" . expand('~/.local/share/nvim/undo//')
+execute 'set backupdir=' . expand('~/.local/share/nvim/backup//')
+execute 'set directory=' . expand('~/.local/share/nvim/swap//')
+execute 'set undodir=' . expand('~/.local/share/nvim/undo//')
 set backup
 set undofile
 set writebackup
 
 """ Enable command-line completion
-set wildmode=list:longest
+set wildmode=list:longest,full
 
 """ Enable visual selection using the mouse in terminals
-if has('mouse')
-  set mouse=a
-endif
+set mouse=a
 
 """ File settings
 set fileformat=unix
 set fileformats=unix,dos,mac
-
-""" GUI settings
-colorscheme moonfly
-set guifont=Hack:h12
-set lines=30 columns=100
-set title titlestring=%t\ -\ Neovim
 
 """ Indent settings
 set expandtab
@@ -112,6 +104,7 @@ set softtabstop=4
 set tabstop=4
 
 """ Keymaps
+let mapleader='\'
 map Q gq
 map Y y$
 inoremap <C-U> <C-G>u<C-U>
@@ -127,9 +120,11 @@ set smartcase
 set number
 
 """ Other settings
+let c_comment_strings=1
 set complete+=i
+set display=truncate
 set hidden
-set nrformats=bin,octal,hex
+set nrformats+=octal,alpha
 set scrolloff=5
 set showmatch
 set textwidth=80
@@ -138,7 +133,7 @@ set ttimeoutlen=100
 """" Functions
 
 """ Diff current loaded buffer and the originating file
-if !exists(":DiffOrig")
+if !exists(':DiffOrig')
   command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
