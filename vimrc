@@ -96,6 +96,8 @@ set mouse=a
 
 """ File settings
 set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
 set fileformat=unix
 set fileformats=unix,dos,mac
 
@@ -149,6 +151,7 @@ set tabpagemax=50
 set textwidth=80
 set ttimeout
 set ttimeoutlen=100
+set ttyfast
 
 "" Move viminfo file
 
