@@ -19,7 +19,7 @@
 """" General settings
 colorscheme moonfly
 set background=dark
-set guifont=Hack:h12
+set guifont=Hack\ 12
 " set guioptions+=!ai
 set lines=30 columns=100
 set titlestring=%t\ -\ Vim
