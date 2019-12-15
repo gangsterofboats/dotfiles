@@ -20,13 +20,10 @@
 colorscheme moonfly
 set background=dark
 set guifont=Hack:h12
-set guioptions+=!ai
-set guioptions-=t
+" set guioptions+=!ai
 set lines=30 columns=100
-set linespace=0
-set mousehide
 set titlestring=%t\ -\ Vim
 
 """ Make shift-insert work like in Xterm
-" map <S-Insert> <MiddleMouse>
-" map! <S-Insert> <MiddleMouse>
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
