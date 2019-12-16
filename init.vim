@@ -25,54 +25,75 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 """ Vim-Plug itself
 Plug 'junegunn/vim-plug'
 
-""" General packages
+""" Color theme packages
 Plug 'Alvarocz/vim-fresh'
 Plug 'Alvarocz/vim-northpole'
 Plug 'bluz71/vim-moonfly-colors'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'honza/vim-snippets'
-Plug 'jceb/vim-orgmode'
-Plug 'Raimondi/delimitMate'
 Plug 'rakr/vim-one'
 Plug 'rakr/vim-two-firewatch'
 Plug 'reedes/vim-colors-pencil'
-Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips'
 Plug 'srcery-colors/srcery-vim'
+
+""" Language packages
+
+"" Multiple languages
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'sheerun/vim-polyglot'
+" Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
+
+"" C/C++
+Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
+
+"" Elixir
+Plug 'carlosgaldino/elixir-snippets'
+Plug 'elixir-lang/vim-elixir'
+
+"" Erlang
+Plug 'vim-erlang/vim-erlang-omnicomplete'
+Plug 'vim-erlang/vim-erlang-runtime'
+
+"" Haskell
+Plug 'dag/vim2hs'
+
+"" HTML
+Plug 'gko/vim-coloresque'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'mattn/emmet-vim'
+
+"" Javascript
+Plug 'othree/yajs.vim'
+
+"" Lua
+Plug 'xolox/vim-lua-ftplugin'
+Plug 'xolox/vim-lua-inspect'
+
+"" Perl/Perl5
+Plug 'c9s/perlomni.vim'
+Plug 'vim-perl/vim-perl6'
+
+"" Python
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+"" Typescript
+Plug 'HerringtonDarkholme/yats.vim'
+
+""" Other packages
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jceb/vim-orgmode'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'Raimondi/delimitMate'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/grep.vim'
+Plug 'xolox/vim-misc'
 Plug 'Yggdroot/indentLine'
-
-""" Language packages
-
-""" Elixir
-Plug 'carlosgaldino/elixir-snippets'
-Plug 'elixir-lang/vim-elixir'
-
-""" HTML
-Plug 'gorodinskiy/vim-coloresque'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-haml'
-
-""" Javascript
-Plug 'pangloss/vim-javascript'
-
-""" Perl
-Plug 'c9s/perlomni.vim'
-Plug 'vim-perl/vim-perl'
-Plug 'vim-perl/vim-perl6'
-
-""" Python
-Plug 'raimon49/requirements.txt.vim'
-
-""" Rust
-Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -84,7 +105,6 @@ execute 'set directory=' . expand('~/.local/share/nvim/swap//')
 execute 'set undodir=' . expand('~/.local/share/nvim/undo//')
 set backup
 set undofile
-set writebackup
 
 """ Enable command-line completion
 set wildmode=list:longest,full
