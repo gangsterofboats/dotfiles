@@ -27,24 +27,121 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
-;;; Packages
-(use-package adoc-mode)
-(use-package alchemist)
+;;; Color theme packages
+(use-package darkokai-theme)
+(use-package noctilux-theme)
+(use-package srcery-theme)
+(use-package zerodark-theme)
+
+;;; Languae packages
+
+;; Multiple languages
+(use-package yasnippet
+  :bind ("C-^" . yas-global-mode))
+(use-package yasnippet-snippets)
+
+;; COBOL
 (use-package cobol-mode
   :config
   (setq
    cobol-format-style 'lower-case
    cobol-source-format 'free))
+
+;; Common Lisp
+(use-package sly)
+
+;; Crystal
 (use-package crystal-mode)
-(use-package csv-mode)
+
+;; D
 (use-package d-mode)
-(use-package darkokai-theme)
-(use-package elpy)
+
+;; Elixir
+(use-package alchemist)
+(use-package elixir-mode)
+
+;; Emacs Lisp
+(use-package xah-elisp-mode)
+
+;; Erlang
+(use-package erlang)
+
+;; Go
+(use-package go-mode)
+
+;; Haskell
+(use-package haskell-mode)
+
+;; HTML
 (use-package emmet-mode
   :hook (sgml-mode css-mode))
+(use-package web-mode)
+(use-package xah-css-mode)
+
+;; Javascript
+(use-package js2-mode
+  :mode
+  ("\\.js$" . js2-mode)
+  :config
+  (setq
+   js-indent-level 4
+   js2-indent-level 4
+   js2-basic-offset 4))
+(use-package json-mode)
+
+;; Julia
+(use-package julia-mode)
+
+;; Lua
+(use-package lua-mode)
+
+;; Nim
+(use-package nim-mode)
+
+;; OCaml
+(use-package tuareg)
+
+;; Perl/Perl5
+(use-package perl6-mode)
+
+;; Powershell
+(use-package powershell)
+
+;; Python
+(use-package elpy)
+
+;; R
+(use-package ess)
+
+;; Racket
+(use-package racket-mode)
+
+;; Ruby
 (use-package enh-ruby-mode
   :mode
   (("\\.rb\\'" . ruby-mode)))
+
+;; Rust
+(use-package rust-mode)
+
+;; Smalltalk
+(use-package smalltalk-mode)
+
+;; SQL
+(use-package sql-indent)
+
+;; Typescript
+(use-package tide)
+
+;; VimL/Vimscript
+(use-package vimrc-mode)
+
+;; Zig
+(use-package zig-mode)
+
+;;; Other packages
+(use-package adoc-mode)
+(use-package csv-mode)
 (use-package ergoemacs-mode
   :demand t
   :config
@@ -52,13 +149,9 @@
   (setq
    ergoemacs-theme nil
    ergoemacs-keyboard-layout "us"))
-(use-package erlang)
-(use-package ess)
 (use-package expand-region
   :bind ("C-," . er/expand-region))
 (use-package fountain-mode)
-(use-package go-mode)
-(use-package haskell-mode)
 (use-package helm
   :demand t
   :config (helm-mode t))
@@ -70,21 +163,8 @@
    ("C-h v" . helpful-variable)
    ("C-h k" . helpful-key)
    ("C-c C-d" . helpful-at-point)))
-(use-package js2-mode
-  :mode
-  ("\\.js$" . js2-mode)
-  :config
-  (setq
-   js-indent-level 4
-   js2-indent-level 4
-   js2-basic-offset 4))
-(use-package json-mode)
-(use-package julia-mode)
-(use-package lua-mode)
 (use-package markdown-mode)
 (use-package muse)
-(use-package nim-mode)
-(use-package noctilux-theme)
 (use-package nov)
 (use-package org
   :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo))
@@ -96,30 +176,13 @@
   (setq
    paradox-execute-asynchronously nil
    paradox-github-token t))
-(use-package perl6-mode)
-(use-package powershell)
-(use-package racket-mode)
 (use-package rainbow-mode)
-(use-package rust-mode)
-(use-package sly)
-(use-package smalltalk-mode)
 (use-package smart-mode-line
   :init (add-hook 'after-init-hook #'sml/setup)
   :config (setq sml/no-confirm-load-theme t))
 (use-package smartparens
   :config (smartparens-global-mode t))
-(use-package sql-indent)
-(use-package srcery-theme)
-(use-package tide)
-(use-package tuareg)
-(use-package vimrc-mode)
-(use-package xah-elisp-mode)
 (use-package yaml-mode)
-(use-package yasnippet
-  :bind ("C-^" . yas-global-mode))
-(use-package yasnippet-snippets)
-(use-package zerodark-theme)
-(use-package zig-mode)
 
 ;;; Local packages
 (use-package arc
