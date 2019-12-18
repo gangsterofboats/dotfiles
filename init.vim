@@ -146,6 +146,7 @@ set complete+=i
 set display=truncate
 set hidden
 set nrformats+=octal,alpha
+packadd! vimball
 set scrolloff=5
 set showmatch
 set textwidth=80
