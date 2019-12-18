@@ -144,6 +144,15 @@ set browsedir=buffer
 """ Move viminfo file
 set viminfo+=n~/vimfiles/viminfo
 
+""" Netrw settings
+let g:netrw_altv          = 1
+let g:netrw_fastbrowse    = 2
+let g:netrw_keepdir       = 0
+let g:netrw_liststyle     = 2
+let g:netrw_retmap        = 1
+let g:netrw_silent        = 1
+let g:netrw_special_syntax= 1
+
 """ Read outside changes
 set autoread
 
@@ -162,6 +171,7 @@ set showcmd
 """ Other settings
 let c_comment_strings=1
 packadd! matchit
+packadd! shellmenu
 set background=dark
 set backspace=indent,eol,start
 set display=truncate
