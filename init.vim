@@ -134,6 +134,15 @@ inoremap <C-U> <C-G>u<C-U>
 set autochdir
 set browsedir=buffer
 
+""" Netrw settings
+let g:netrw_altv          = 1
+let g:netrw_fastbrowse    = 2
+let g:netrw_keepdir       = 0
+let g:netrw_liststyle     = 2
+let g:netrw_retmap        = 1
+let g:netrw_silent        = 1
+let g:netrw_special_syntax= 1
+
 """ Search settings
 set smartcase
 
@@ -146,6 +155,8 @@ set complete+=i
 set display=truncate
 set hidden
 set nrformats+=octal,alpha
+packadd! matchit
+packadd! shellmenu
 packadd! vimball
 set scrolloff=5
 set showmatch
