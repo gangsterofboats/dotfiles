@@ -274,8 +274,10 @@
 ;;; Some keybindings
 (global-set-key (kbd "C-#") #'global-company-mode)
 (global-set-key (kbd "C-'") #'comment-line)
+(global-set-key (kbd "C-\"") #'comment-dwim)
 (global-set-key (kbd "C-|") #'comment-box)
 (global-set-key (kbd "M-!") #'shell-command)
+(global-set-key (kbd "M-A") #'eval-expression)
 (global-set-key (kbd "C-x C-d") #'dired) ; Switch these two.  Given buffer list keybindings, makes more sense
 (global-set-key (kbd "C-x d") #'list-directory)
 
@@ -298,6 +300,7 @@
  history-delete-duplicates t
  history-length t ; history-length 1000
  inhibit-startup-screen t
+ line-number-display-limit-width most-positive-fixnum
  load-prefer-newer t
  read-buffer-completion-ignore-case t
  require-final-newline t
