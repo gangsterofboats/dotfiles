@@ -33,6 +33,6 @@
 
 ;;; Other settings
 (setq
- package-menu-async nil
- package-quickstart t)
+ package-quickstart t
+ package-user-dir (expand-file-name "~/.local/share/emacs/")
 (tool-bar-mode -1)
