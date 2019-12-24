@@ -34,5 +34,5 @@
 ;;; Other settings
 (setq
  package-quickstart t
- package-user-dir (expand-file-name "~/.local/share/emacs/")
+ package-user-dir (expand-file-name "~/.local/share/emacs/"))
 (tool-bar-mode -1)
