@@ -197,7 +197,7 @@
 
 ;;; Backup settings
 (setq
- auto-save-file-name-transforms `((".*" ,(expand-file-name "~/.cache/emacs/save") t))
+ auto-save-file-name-transforms `((".*" ,(expand-file-name "~/.cache/emacs/save/") t))
  backup-by-copying t
  backup-directory-alist `(("." . ,(expand-file-name "~/.cache/emacs/backup/")))
  delete-old-versions t
