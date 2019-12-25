@@ -152,6 +152,7 @@
 (use-package expand-region
   :bind ("C-," . er/expand-region))
 (use-package fountain-mode)
+(use-package gnu-elpa-keyring-update)
 (use-package helm
   :demand t
   :config (helm-mode t))
