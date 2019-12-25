@@ -22,8 +22,6 @@
       '(("gnu" . "https://elpa.gnu.org/packages/") ; GNU
         ("melpa" . "https://melpa.org/packages/")  ; MELPA
         ("org" . "https://orgmode.org/elpa/")))    ; Org Mode
-;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t) ; MELPA
-;; (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)     ; Org Mode
 
 ;;; Package archives order
 (setq package-archive-priorities
