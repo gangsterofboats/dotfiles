@@ -193,18 +193,18 @@
 ;;;; Settings
 
 ;;; Add directory to load path
-(add-to-list 'load-path (expand-file-name "~/.local/share/emacs/lisp/"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/"))
 
 ;;; Backup settings
 (setq
- auto-save-file-name-transforms `((".*" ,(expand-file-name "~/.cache/emacs/save/") t))
+ auto-save-file-name-transforms `((".*" ,(expand-file-name "~/.emacs.d/.save.d/") t))
  backup-by-copying t
- backup-directory-alist `(("." . ,(expand-file-name "~/.cache/emacs/backup/")))
+ backup-directory-alist `(("." . ,(expand-file-name "~/.emacs.d/.backup.d/")))
  delete-old-versions t
  kept-new-versions 10
  kept-old-versions 5
  undo-tree-auto-save-history t
- undo-tree-history-directory-alist `(("." . ,(expand-file-name "~/.cache/emacs/undo/")))
+ undo-tree-history-directory-alist `(("." . ,(expand-file-name "~/.emacs.d/.undo.d/")))
  version-control t)
 
 ;;; C/C++/CC-Mode Settings
