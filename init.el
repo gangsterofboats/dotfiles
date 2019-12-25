@@ -238,7 +238,10 @@
 (setq locale-coding-system 'utf-8)
 
 ;;; Garbage collection
-(add-hook 'focus-out-hook #'garbage-collect)
+(add-function :after after-focus-change-function
+              (lambda ()
+                (unless (frame-focus-state)
+                  (garbage-collect))))
 
 ;;; Hippie Expand
 (global-set-key (kbd "C-;") #'hippie-expand)
