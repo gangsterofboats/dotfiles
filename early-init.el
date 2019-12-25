@@ -32,7 +32,5 @@
         ("gnu" . 10)))
 
 ;;; Other settings
-(setq
- package-quickstart t
- package-user-dir (expand-file-name "~/.local/share/emacs/packages/"))
+(setq package-quickstart t)
 (tool-bar-mode -1)
