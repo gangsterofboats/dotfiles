@@ -299,12 +299,13 @@
  custom-file (make-temp-file "")
  initial-frame-alist '((width . 125) (height . 30))
  default-frame-alist '((width . 125) (height . 30))
- frame-title-format '("" "%b - Emacs " emacs-version)
+ frame-title-format '("%b - Emacs " emacs-version)
  ;; fringes-outside-margins t
  gc-cons-threshold (* 100 1024 1024)
  history-delete-duplicates t
  history-length t ; history-length 1000
  inhibit-startup-screen t
+ kill-whole-line t
  line-number-display-limit-width most-positive-fixnum
  load-prefer-newer t
  read-buffer-completion-ignore-case t
