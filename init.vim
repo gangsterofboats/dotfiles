@@ -39,8 +39,9 @@ Plug 'srcery-colors/srcery-vim'
 "" Multiple languages
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 
 "" C/C++
@@ -83,15 +84,18 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jceb/vim-orgmode'
+Plug 'jiangmiao/auto-pairs'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mbbill/undotree'
-Plug 'Raimondi/delimitMate'
+Plug 'psliwka/vim-smoothie'
+" Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-nerdtree/nerdtree'
 Plug 'vim-scripts/grep.vim'
 Plug 'xolox/vim-misc'
 Plug 'Yggdroot/indentLine'
@@ -144,6 +148,7 @@ let g:netrw_silent        = 1
 let g:netrw_special_syntax= 1
 
 """ Search settings
+set ignorecase
 set smartcase
 
 """ Set line numbers
@@ -154,12 +159,14 @@ let c_comment_strings=1
 packadd! matchit
 packadd! shellmenu
 packadd! vimball
+set cinoptions=>s,e0,n0,f0,{0,}4,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 set complete+=i
 set display=truncate
 set hidden
 set nrformats+=octal,alpha
 set scrolloff=5
 set showmatch
+set termguicolors
 set textwidth=80
 set ttimeoutlen=100
 
