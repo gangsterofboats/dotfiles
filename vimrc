@@ -50,7 +50,7 @@ Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 
 "" Elixir
 Plug 'carlosgaldino/elixir-snippets'
-Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 
 "" Erlang
 Plug 'vim-erlang/vim-erlang-omnicomplete'
@@ -97,8 +97,8 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-nerdtree/nerdtree'
-Plug 'vim-scripts/grep.vim'
 Plug 'xolox/vim-misc'
+Plug 'yegappan/grep'
 Plug 'Yggdroot/indentLine'
 
 call plug#end()
