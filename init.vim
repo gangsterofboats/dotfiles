@@ -72,7 +72,7 @@ Plug 'xolox/vim-lua-inspect'
 
 "" Perl/Perl5
 Plug 'c9s/perlomni.vim'
-Plug 'vim-perl/vim-perl6'
+Plug 'Raku/vim-raku'
 
 "" Python
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
