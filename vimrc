@@ -176,7 +176,7 @@ set showcmd
 """ Other settings
 let c_comment_strings=1
 packadd! matchit
-packadd! shellmenu
+" packadd! shellmenu
 set background=dark
 set backspace=indent,eol,start
 set cinoptions=>s,e0,n0,f0,{0,}4,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
