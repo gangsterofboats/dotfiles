@@ -42,7 +42,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 
 "" C/C++
