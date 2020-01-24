@@ -20,7 +20,7 @@
 set cpoptions=""
 
 """" Packages
-call plug#begin(expand('~/.local/share/nvim/plugged//'))
+call plug#begin(expand('~/.local/share/nvim/plugged'))
 
 """ Vim-Plug itself
 Plug 'junegunn/vim-plug'
