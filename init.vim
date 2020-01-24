@@ -20,7 +20,7 @@
 set cpoptions=""
 
 """" Packages
-call plug#begin(expand('~/.config/nvim/plugged'))
+call plug#begin(expand('~/.local/share/nvim/plugged//'))
 
 """ Vim-Plug itself
 Plug 'junegunn/vim-plug'
@@ -85,6 +85,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'jiangmiao/auto-pairs'
+Plug 'machakann/vim-sandwich'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mbbill/undotree'
 Plug 'psliwka/vim-smoothie'
@@ -92,7 +93,7 @@ Plug 'psliwka/vim-smoothie'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-nerdtree/nerdtree'
