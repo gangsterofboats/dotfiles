@@ -20,7 +20,7 @@
 set cpoptions=""
 
 """" Packages
-call plug#begin(expand('~/.local/share/nvim/site/plugged'))
+call plug#begin(expand('~/.local/share/nvim/plugged'))
 
 """ Vim-Plug itself
 Plug 'junegunn/vim-plug'
@@ -106,9 +106,6 @@ call plug#end()
 """" Settings
 
 """ Backup file settings
-execute 'set backupdir=' . expand('~/.local/share/nvim/site/backup//')
-execute 'set directory=' . expand('~/.local/share/nvim/site/swap//')
-execute 'set undodir=' . expand('~/.local/share/nvim/site/undo//')
 set backup
 set undofile
 
