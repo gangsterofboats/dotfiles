@@ -106,6 +106,7 @@ call plug#end()
 """" Settings
 
 """ Backup file settings
+set backupdir-=.
 set backup
 set undofile
 
