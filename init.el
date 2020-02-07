@@ -156,8 +156,8 @@
 (use-package helm
   :demand t
   :config (helm-mode t))
-;; (use-package helm-swoop
-;;  :bind ("C-f" . helm-swoop))
+(use-package helm-swoop
+  :bind ("C-f" . helm-swoop))
 (use-package helpful
   :bind
   (("C-h f" . helpful-callable)
@@ -183,8 +183,8 @@
   :config (setq sml/no-confirm-load-theme t))
 (use-package smartparens
   :config (smartparens-global-mode t))
-(use-package swiper-helm
-  :bind ("C-f" . swiper-helm))
+;; (use-package swiper-helm
+;;  :bind ("C-f" . swiper-helm))
 (use-package yaml-mode)
 
 ;;; Local packages
