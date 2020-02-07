@@ -106,6 +106,7 @@ call plug#end()
 """" Settings
 
 """ Backup file settings
+autocmd BufWritePre * let &backupext = substitute(expand('%:p:h'), '/', '%', 'g')
 set backupdir-=.
 set backup
 set undofile
