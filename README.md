@@ -6,7 +6,7 @@ My personal dotfiles
 * config.fish: For the [Fish shell](https://fishshell.com/)
 * init.el and early-init.el: For GNU Emacs
 * init.vim and ginit.vim: For [Neovim](https://neovim.io/)
-* .nanorc: For GNU Nano
+* nanorc: For GNU Nano
 * .nethackrc: For the game Nethack
 * .sbclrc: For [Steel Bank Common Lisp (SBCL)](http://www.sbcl.org/)
 * .tcshrc: For the TENEX C shell (tcsh) (though I use fish now)
