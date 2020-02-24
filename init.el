@@ -164,8 +164,8 @@
    ("C-h v" . helpful-variable)
    ("C-h k" . helpful-key)
    ("C-c C-d" . helpful-at-point)))
+(use-package hyperbole)
 (use-package markdown-mode)
-(use-package muse)
 (use-package nov)
 (use-package org
   :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo))
