@@ -293,6 +293,7 @@
 (blink-cursor-mode t)
 (column-number-mode t)
 (display-time-mode t)
+(global-auto-revert-mode t)
 (global-subword-mode t)
 (global-undo-tree-mode t)
 (setq
@@ -316,6 +317,7 @@
  save-interprogram-paste-before-kill t
  vc-follow-symlinks t)
 (setq-default
+ dired-listing-switches "-alh"
  fill-column 80
  indent-tabs-mode nil
  tab-width 4)
