@@ -195,15 +195,24 @@ set display=truncate
 set formatoptions+=j
 set hidden
 set history=10000
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set nolangremap
+set nostartofline
 set nrformats+=alpha
 set scrolloff=5
+set shortmess+=F
+set shortmess-=S
 set showmatch
+set sidescroll=1
+set sidescrolloff=5
+set switchbuf=uselast
 set tabpagemax=50
 set termguicolors
 set textwidth=80
 set ttimeout
 set ttimeoutlen=100
 set ttyfast
+set viminfo^=!
 
 """" Functions
 
