@@ -164,7 +164,6 @@
    ("C-h v" . helpful-variable)
    ("C-h k" . helpful-key)
    ("C-c C-d" . helpful-at-point)))
-(use-package hyperbole)
 (use-package markdown-mode)
 (use-package nov)
 (use-package org
