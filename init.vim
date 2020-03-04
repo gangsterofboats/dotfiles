@@ -81,6 +81,7 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'HerringtonDarkholme/yats.vim'
 
 """ Other packages
+" Plug 'axvr/org.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jceb/vim-orgmode'
