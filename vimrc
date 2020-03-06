@@ -219,6 +219,5 @@ set viminfo^=!
 
 """ Diff current loaded buffer and the originating file
 if !exists(':DiffOrig')
-  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis
 endif
