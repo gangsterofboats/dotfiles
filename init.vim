@@ -163,7 +163,7 @@ packadd! vimball
 set cinoptions=>s,e0,n0,f0,{0,}4,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 set complete+=i
 set display=truncate
-fillchars=vert:|,fold:-
+set fillchars=vert:│,fold:·
 set hidden
 set inccommand=nosplit
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
@@ -180,6 +180,5 @@ set ttimeoutlen=100
 
 """ Diff current loaded buffer and the originating file
 if !exists(':DiffOrig')
-  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis
 endif
