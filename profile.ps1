@@ -27,4 +27,4 @@ function Prompt
 }
 
 #### Other settings
-$MaximumHistoryCount = 32768
+$MaximumHistoryCount = 32767
