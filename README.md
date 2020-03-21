@@ -8,6 +8,7 @@ My personal dotfiles
 * init.vim and ginit.vim: For [Neovim](https://neovim.io/)
 * nanorc: For GNU Nano
 * .nethackrc: For the game Nethack
+* powershell.config.json and profile.ps1: For Microsoft PowerShell
 * .sbclrc: For [Steel Bank Common Lisp (SBCL)](http://www.sbcl.org/)
 * .tcshrc: For the TENEX C shell (tcsh) (though I use fish now)
 * vimrc and gvimrc: For Vim and gVim
