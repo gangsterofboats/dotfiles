@@ -1,1 +1,4 @@
-{"ExperimentalFeatures":["PSCommandNotFoundSuggestion", "PSUnixFileStat"]}
+{
+    "PSModulePath": "%XDG_DATA_HOME%/powershell/Modules",
+    "ExperimentalFeatures":["PSCommandNotFoundSuggestion", "PSUnixFileStat"]
+}
