@@ -47,6 +47,9 @@
    cobol-format-style 'lower-case
    cobol-source-format 'free))
 
+;; Coffeescript
+(use-package coffee-mode)
+
 ;; Common Lisp
 (use-package sly)
 
