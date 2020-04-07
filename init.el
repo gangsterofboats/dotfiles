@@ -185,8 +185,7 @@
   :config (setq sml/no-confirm-load-theme t))
 (use-package smartparens
   :config (smartparens-global-mode t))
-;; (use-package swiper-helm
-;;  :bind ("C-f" . swiper-helm))
+(use-package speed-type)
 (use-package yaml-mode)
 
 ;;; Local packages
