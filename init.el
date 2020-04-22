@@ -104,8 +104,8 @@
 ;; OCaml
 (use-package tuareg)
 
-;; Perl/Perl5
-(use-package perl6-mode)
+;; Perl
+(use-package raku-mode)
 
 ;; Powershell
 (use-package powershell)
@@ -215,7 +215,7 @@
 (setq c-default-style "bsd")
 (setq-default c-basic-offset 4)
 
-;;; CPerl settings
+;;; CPerl settings (for Perl5)
 (add-to-list 'auto-mode-alist '("\\.\\([pP][Llm]\\|al\\)\\'" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
