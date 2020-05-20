@@ -1,5 +1,5 @@
 #### Staring banner
-Clear-Host
+# Clear-Host
 fortune -ace
 Write-Host ""
 
