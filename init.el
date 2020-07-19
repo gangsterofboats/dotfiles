@@ -104,7 +104,7 @@
 ;; OCaml
 (use-package tuareg)
 
-;; Perl
+;; Perl6
 (use-package raku-mode)
 
 ;; Powershell
@@ -186,6 +186,12 @@
 (use-package smartparens
   :config (smartparens-global-mode t))
 (use-package speed-type)
+(use-package which-key
+  :config (which-key-mode))
+;; (use-package xah-fly-keys
+  ;; :config
+  ;; (xah-fly-keys-set-layout "qwerty")
+  ;; (xah-fly-keys 1))
 (use-package yaml-mode)
 
 ;;; Local packages
@@ -215,7 +221,7 @@
 (setq c-default-style "bsd")
 (setq-default c-basic-offset 4)
 
-;;; CPerl settings (for Perl5)
+;;; CPerl settings (for Perl5/7)
 (add-to-list 'auto-mode-alist '("\\.\\([pP][Llm]\\|al\\)\\'" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
