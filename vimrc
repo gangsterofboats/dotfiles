@@ -87,7 +87,7 @@ Plug 'othree/yajs.vim'
 Plug 'xolox/vim-lua-ftplugin'
 Plug 'xolox/vim-lua-inspect'
 
-"" Perl/Perl5
+"" Perl7/Perl6
 Plug 'c9s/perlomni.vim'
 Plug 'Raku/vim-raku'
 
