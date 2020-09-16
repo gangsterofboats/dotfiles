@@ -48,7 +48,9 @@
    cobol-source-format 'free))
 
 ;; Coffeescript
-(use-package coffee-mode)
+(use-package coffee-mode
+  :config
+  (setq coffee-tab-width 4))
 
 ;; Common Lisp
 (use-package sly)
@@ -133,6 +135,9 @@
 ;; SQL
 (use-package sql-indent)
 
+;; TeX/LaTeX
+(use-package auctex)
+
 ;; Typescript
 (use-package tide)
 
@@ -191,7 +196,7 @@
 ;; (use-package xah-fly-keys
   ;; :config
   ;; (xah-fly-keys-set-layout "qwerty")
-  ;; (xah-fly-keys 1))
+  ;; (xah-fly-keys t))
 (use-package yaml-mode)
 
 ;;; Local packages
@@ -218,8 +223,9 @@
  version-control t)
 
 ;;; C/C++/CC-Mode Settings
-(setq c-default-style "bsd")
-(setq-default c-basic-offset 4)
+(setq
+ c-basic-offset 4
+ c-default-style "bsd")
 
 ;;; CPerl settings (for Perl5/7)
 (add-to-list 'auto-mode-alist '("\\.\\([pP][Llm]\\|al\\)\\'" . cperl-mode))
@@ -329,6 +335,7 @@
  indent-tabs-mode nil
  tab-width 4)
 (show-paren-mode t)
+;; (which-function-mode t)
 
 ;;;; Functions
 
