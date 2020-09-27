@@ -232,6 +232,8 @@
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("miniperl" . cperl-mode))
+(cperl-set-style "C++")
+;; (cperl-set-style "PBP")
 (setq
  cperl-brace-offset 0
  cperl-continued-brace-offset -4
