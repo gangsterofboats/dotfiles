@@ -232,19 +232,24 @@
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("miniperl" . cperl-mode))
-(cperl-set-style "C++")
+;; (cperl-set-style "C++")
 ;; (cperl-set-style "PBP")
 (setq
+ ; Style settings
  cperl-brace-offset 0
- cperl-continued-brace-offset -4
+ cperl-continued-brace-offset 0
  cperl-continued-statement-offset 4
- cperl-extra-newline-before-brace t
+ cperl-extra-newline-before-brace nil
+ cperl-extra-newline-before-brace-multiline nil
+ cperl-indent-level 4
+ cperl-indent-parens-as-block t
+ cperl-label-offset -2
+ cperl-merge-trailing-else nil
+ cperl-tab-always-indent t
+ ; Other settings
  cperl-hairy t
  cperl-highlight-variables-indiscriminately t
- cperl-indent-level 4
- cperl-indent-wrt-brace nil
- cperl-label-offset -4
- cperl-merge-trailing-else nil)
+ cperl-indent-wrt-brace nil)
 
 ;;; Ensure UTF-8 usage
 (prefer-coding-system 'utf-8-unix)
