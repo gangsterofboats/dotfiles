@@ -266,6 +266,11 @@
                 (unless (frame-focus-state)
                   (garbage-collect))))
 
+;;; Gnus settings
+(setq
+ gnus-init-file (expand-file-name "~/.config/emacs/gnus.el")
+ mail-source-directory (expand-file-name "~/.local/share/mail"))
+
 ;;; Hippie Expand
 (global-set-key (kbd "C-;") #'hippie-expand)
 (setq hippie-expand-try-functions-list
