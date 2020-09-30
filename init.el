@@ -150,6 +150,8 @@
 ;;; Other packages
 (use-package adoc-mode)
 (use-package csv-mode)
+(use-package doom-modeline
+  :init (doom-modeline-mode t))
 (use-package ergoemacs-mode
   :demand t
   :config
@@ -185,9 +187,9 @@
    paradox-execute-asynchronously nil
    paradox-github-token t))
 (use-package rainbow-mode)
-(use-package smart-mode-line
-  :init (add-hook 'after-init-hook #'sml/setup)
-  :config (setq sml/no-confirm-load-theme t))
+;; (use-package smart-mode-line
+;;   :init (add-hook 'after-init-hook #'sml/setup)
+;;   :config (setq sml/no-confirm-load-theme t))
 (use-package smartparens
   :config (smartparens-global-mode t))
 (use-package speed-type)
