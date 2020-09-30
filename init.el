@@ -1,7 +1,7 @@
 ;;;; -*- lexical-binding: t -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs configuration -- init.el file                                      ;;
-;; Copyright (C) 2019 Michael Wiseman                                       ;;
+;; Copyright (C) 2020 Michael Wiseman                                       ;;
 ;;                                                                          ;;
 ;; This program is free software: you can redistribute it and/or modify     ;;
 ;; it under the terms of the GNU Affero General Public License as           ;;
@@ -49,8 +49,7 @@
 
 ;; Coffeescript
 (use-package coffee-mode
-  :config
-  (setq coffee-tab-width 4))
+  :config (setq coffee-tab-width 4))
 
 ;; Common Lisp
 (use-package sly)
@@ -85,8 +84,7 @@
 
 ;; Javascript
 (use-package js2-mode
-  :mode
-  ("\\.js$" . js2-mode)
+  :mode ("\\.js$" . js2-mode)
   :config
   (setq
    js-indent-level 4
@@ -123,8 +121,7 @@
 
 ;; Ruby
 (use-package enh-ruby-mode
-  :mode
-  (("\\.rb\\'" . ruby-mode)))
+  :mode ("\\.rb\\'" . ruby-mode))
 
 ;; Rust
 (use-package rust-mode)
@@ -151,7 +148,12 @@
 (use-package adoc-mode)
 (use-package csv-mode)
 (use-package doom-modeline
-  :init (doom-modeline-mode t))
+  :init (doom-modeline-mode t)
+  :config
+  (setq
+   doom-modeline-bar-width 3
+   doom-modeline-icon (display-graphic-p)
+   doom-modeline-unicode-fallback t))
 (use-package ergoemacs-mode
   :demand t
   :config
@@ -204,8 +206,7 @@
 ;;; Local packages
 (use-package arc
   :load-path "lisp/"
-  :mode
-  ("\\.arc$" . arc-mode))
+  :mode ("\\.arc$" . arc-mode))
 
 ;;;; Settings
 
