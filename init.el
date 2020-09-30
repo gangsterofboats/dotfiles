@@ -152,6 +152,7 @@
   :config
   (setq
    doom-modeline-bar-width 3
+   doom-modeline-gnus t
    doom-modeline-icon (display-graphic-p)
    doom-modeline-unicode-fallback t))
 (use-package ergoemacs-mode
