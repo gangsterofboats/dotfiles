@@ -1,0 +1,68 @@
+{
+    "Ctrl-s": "Save",
+    "Ctrl-o": "SaveAs",
+    "Ctrl-r": "OpenFile",
+    "Ctrl-x": "Quit",
+
+    "Ctrl-k": "CutLine",
+    "Alt-k": "Cut",
+    "Alt-6": "CopyLine",
+    "Alt-a": "Copy",
+    "Ctrl-u": "Paste",
+    "Ctrl-]": "Autocomplete",
+    "Alt-3": "lua:comment.comment",
+    "Alt-u": "Undo",
+    "Alt-e": "Redo",
+
+    "Ctrl-w": "Find",
+    "Alt-q": "FindPrevious",
+    "Alt-w": "FindNext",
+    "Ctrl-\\": "command-edit:replace ",
+
+    "Ctrl-h": "Backspace",
+    "Ctrl-d": "Delete",
+    "Alt-Backspace":  "DeleteWordLeft",
+    "CtrlDelete": "DeleteWordRight",
+    "AltDelete": "DeleteLine",
+
+    "Ctrl-t": "CommandMode",
+    "Alt-b": "command:lint",
+    "Alt-:": "ToggleMacro",
+    "Alt-;": "PlayMacro",
+
+    "Ctrl-b": "CursorLeft",
+    "Ctrl-f": "CursorRight",
+    "CtrlLeft": "WordLeft",
+    "CtrlRight": "WordRight",
+    "Ctrl-a": "StartOfLine",
+    "Ctrl-e": "EndOfLine",
+    "Ctrl-p": "CursorUp",
+    "Ctrl-n": "CursorDown",
+    "CtrlUp": "ParagraphPrevious",
+    "CtrlDown": "ParagraphNext",
+    "Ctrl-y": "CursorPageUp",
+    "Ctrl-v": "CursorPageDown",
+    "Alt-\\": "CursorStart",
+    "Alt-/": "CursorEnd",
+
+    "CtrlUnderscore": "JumpLine",
+    "Alt-]": "JumpToMatchingBrace",
+    "AltUp": "PageUp",
+    "AltDown": "PageDown",
+
+    "Ctrl-g": "ToggleHelp",
+
+    "ShiftUp": "SelectUp",
+    "ShiftDown": "SelectDown",
+    "ShiftLeft": "SelectLeft",
+    "ShiftRight": "SelectRight",
+    "Tab": "IndentSelection|IndentLine|InsertTab",
+    "Backtab": "OutdentSelection|OutdentLine",
+    "Alt-n": "ToggleRuler",
+    "Ctrl-l": "ClearStatus",
+
+    "Ctrl-j": "AddTab",
+    "Alt-,": "PreviousTab",
+    "Alt-.": "NextTab",
+    "Alt-x": "ToggleKeyMenu"
+}
