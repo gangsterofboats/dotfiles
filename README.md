@@ -10,6 +10,7 @@ My personal dotfiles
 * .nethackrc: For the game Nethack
 * powershell.config.json and profile.ps1: For Microsoft PowerShell
 * .sbclrc: For [Steel Bank Common Lisp (SBCL)](http://www.sbcl.org/)
+* settings.json and bindings.json: For the [Micro text editor](https://github.com/zyedidia/micro) (and using Nano-inspired keybindings)
 * .tcshrc: For the TENEX C shell (tcsh) (though I use fish now)
 * vimrc and gvimrc: For Vim and gVim
 * .zoidrc: For the Perl [Zoidberg shell](https://metacpan.org/pod/Zoidberg)
