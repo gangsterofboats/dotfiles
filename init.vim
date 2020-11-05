@@ -132,7 +132,7 @@ set tabstop=4
 
 """ Keymaps
 let mapleader='\'
-map Q gq
+map gf :e <cfile><CR>
 map Y y$
 inoremap <C-U> <C-G>u<C-U>
 
