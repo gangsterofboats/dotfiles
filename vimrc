@@ -155,7 +155,7 @@ set tabstop=4
 let mapleader='\'
 map cw dwi
 map cW dWi
-map Q gq
+map gf :e <cfile><CR>
 map Y y$
 inoremap <C-U> <C-G>u<C-U>
 
