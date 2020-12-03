@@ -196,6 +196,7 @@
 (use-package smartparens
   :config (smartparens-global-mode t))
 (use-package speed-type)
+(use-package vdiff)
 (use-package which-key
   :config (which-key-mode))
 ;; (use-package xah-fly-keys
@@ -331,12 +332,14 @@
  custom-file (make-temp-file "")
  initial-frame-alist '((width . 125) (height . 30))
  default-frame-alist '((width . 125) (height . 30))
+ ediff-window-setup-function 'ediff-setup-windows-plain
  frame-title-format '("%b - Emacs " emacs-version)
  ;; fringes-outside-margins t
  gc-cons-threshold (* 100 1024 1024)
  history-delete-duplicates t
  history-length t ; history-length 1000
  inhibit-startup-screen t
+ initial-scratch-message nil
  kill-whole-line t
  line-number-display-limit-width most-positive-fixnum
  load-prefer-newer t
@@ -363,4 +366,4 @@
 ;;;; Final settings
 
 ;;; Initial scratch mode
-;; (setq-default initial-major-mode #'emacs-lisp-mode)
+(setq-default initial-major-mode #'fundamental-mode)
