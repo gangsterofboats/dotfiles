@@ -172,7 +172,7 @@ set softwrap
 
 ## Use the end of the title bar for some state flags: I = auto-indenting,
 ## M = mark, L = hard-wrapping long lines, R = recording, S = soft-wrapping.
-# set stateflags
+set stateflags
 
 ## Allow nano to be suspended (with ^Z by default).
 set suspendable
@@ -186,9 +186,6 @@ set tabstospaces
 
 ## Snip whitespace at the end of lines when justifying or hard-wrapping.
 set trimblanks
-
-## Disallow file modification.  Why would you want this in an rcfile? ;)
-# set view
 
 ## The two single-column characters used to display the first characters
 ## of tabs and spaces.  187 in ISO 8859-1 (0000BB in Unicode) and 183 in
