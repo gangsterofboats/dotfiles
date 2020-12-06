@@ -155,6 +155,7 @@
    doom-modeline-gnus t
    doom-modeline-icon (display-graphic-p)
    doom-modeline-unicode-fallback t))
+(use-package eglot)
 (use-package ergoemacs-mode
   :demand t
   :config
@@ -167,8 +168,9 @@
 (use-package fountain-mode)
 (use-package gnu-elpa-keyring-update)
 (use-package helm
-  :demand t
-  :config (helm-mode t))
+ :demand t
+ :bind ("M-a" . helm-M-x)
+ :config (helm-mode t))
 (use-package helm-swoop
   :bind ("C-f" . helm-swoop))
 (use-package helpful
@@ -190,9 +192,6 @@
    paradox-execute-asynchronously nil
    paradox-github-token t))
 (use-package rainbow-mode)
-;; (use-package smart-mode-line
-;;   :init (add-hook 'after-init-hook #'sml/setup)
-;;   :config (setq sml/no-confirm-load-theme t))
 (use-package smartparens
   :config (smartparens-global-mode t))
 (use-package speed-type)
@@ -237,10 +236,9 @@
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("miniperl" . cperl-mode))
-;; (cperl-set-style "C++")
-;; (cperl-set-style "PBP")
 (setq
  ; Style settings
+ ; Basically the PBP setting of cperl-set-style
  cperl-brace-offset 0
  cperl-continued-brace-offset 0
  cperl-continued-statement-offset 4
@@ -270,11 +268,6 @@
               (lambda ()
                 (unless (frame-focus-state)
                   (garbage-collect))))
-
-;;; Gnus settings
-(setq
- gnus-init-file (expand-file-name "~/.config/emacs/gnus.el")
- mail-source-directory (expand-file-name "~/.local/share/mail"))
 
 ;;; Hippie Expand
 (global-set-key (kbd "C-;") #'hippie-expand)
