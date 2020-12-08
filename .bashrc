@@ -1,6 +1,6 @@
 ############################################################################
 # Bash (Bourne-Again shell) configuration -- .bashrc file                  #
-# Copyright (C) 2019 Michael Wiseman                                       #
+# Copyright (C) 2020 Michael Wiseman                                       #
 #                                                                          #
 # This program is free software: you can redistribute it and/or modify     #
 # it under the terms of the GNU Affero General Public License as           #
@@ -8,7 +8,7 @@
 # License, or (at your option) any later version.                          #
 #                                                                          #
 # This program is distributed in the hope that it will be useful,          #
-# but WITHOUT ANY WARRANTY# without even the implied warranty of           #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of           #
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            #
 # GNU Affero General Public License for more details.                      #
 #                                                                          #
