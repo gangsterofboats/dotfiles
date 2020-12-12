@@ -44,5 +44,11 @@ function Prompt
     Return " "
 }
 
+#### PSReadLine Settings
+(Get-PSReadLineOption).HistorySearchCaseSensitive = $True
+Set-PSReadLineOption -BellStyle None
+Set-PSReadLineOption -EditMode Emacs
+Set-PSReadLineOption -PredictionSource History
+
 #### Other settings
 $MaximumHistoryCount = 32767
