@@ -166,6 +166,7 @@
 (use-package expand-region
   :bind ("C-," . er/expand-region))
 (use-package fountain-mode)
+(use-package fzf)
 (use-package gnu-elpa-keyring-update)
 (use-package helm
  :demand t
@@ -208,6 +209,9 @@
 (use-package arc
   :load-path "lisp/"
   :mode ("\\.arc$" . arc-mode))
+
+(use-package helm-fzf
+  :load-path "lisp/")
 
 ;;;; Settings
 
