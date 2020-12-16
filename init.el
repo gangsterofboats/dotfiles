@@ -27,11 +27,8 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
-;;; Color theme packages
-(use-package darkokai-theme)
-(use-package noctilux-theme)
+;;; Color theme package
 (use-package srcery-theme)
-(use-package zerodark-theme)
 
 ;;; Languae packages
 
@@ -293,10 +290,7 @@
 (global-display-line-numbers-mode t)
 
 ;;; Set color theme
-;; (load-theme 'darkokai t)
-;; (load-theme 'noctilux t)
 (load-theme 'srcery t)
-;; (load-theme 'zerodark t)
 
 ;;; Set font
 (set-face-font 'default "Hack-12")
