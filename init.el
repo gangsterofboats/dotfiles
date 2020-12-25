@@ -200,6 +200,7 @@
   ;; :config
   ;; (xah-fly-keys-set-layout "qwerty")
   ;; (xah-fly-keys t))
+(use-package xah-replace-pairs)
 (use-package yaml-mode)
 
 ;;; Local packages
