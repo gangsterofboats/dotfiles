@@ -27,7 +27,8 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 
-;;; Color theme package
+;;; Color theme packages
+(use-package modus-themes)
 (use-package srcery-theme)
 
 ;;; Languae packages
@@ -77,7 +78,8 @@
 (use-package emmet-mode
   :hook (sgml-mode css-mode))
 (use-package web-mode)
-(use-package xah-css-mode)
+(use-package xah-css-mode
+  :after (xah-replace-pairs))
 
 ;; Javascript
 (use-package js2-mode
@@ -130,7 +132,8 @@
 (use-package sql-indent)
 
 ;; TeX/LaTeX
-(use-package auctex)
+(use-package tex
+  :ensure auctex)
 
 ;; Typescript
 (use-package tide)
@@ -197,9 +200,9 @@
 (use-package which-key
   :config (which-key-mode))
 ;; (use-package xah-fly-keys
-  ;; :config
-  ;; (xah-fly-keys-set-layout "qwerty")
-  ;; (xah-fly-keys t))
+;;   :config
+;;   (xah-fly-keys-set-layout "qwerty")
+;;   (xah-fly-keys t))
 (use-package xah-replace-pairs)
 (use-package yaml-mode)
 
