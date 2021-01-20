@@ -20,7 +20,7 @@
 ;;; Package archives
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/packages/")       ; GNU
-        ("nongnu" . "https://elpa.nongnu.org/packages/") ; NonGNU
+        ;; ("nongnu" . "https://elpa.nongnu.org/packages/") ; NonGNU
         ("melpa" . "https://melpa.org/packages/")        ; MELPA
         ("org" . "https://orgmode.org/elpa/")))          ; Org Mode
 
