@@ -28,8 +28,8 @@
 (setq package-archive-priorities
       '(("melpa" . 20)
         ("org" . 20)
-        ("gnu" . 10)
-        ("nongnu" . 10)))
+        ("gnu" . 10)))
+        ;; ("nongnu" . 10)))
 
 ;;; Other settings
 (setq package-user-dir (expand-file-name "~/.local/share/emacs/packages/"))
