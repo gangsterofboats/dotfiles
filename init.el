@@ -321,6 +321,7 @@
 (global-auto-revert-mode t)
 (global-subword-mode t)
 (global-undo-tree-mode t)
+(run-at-time nil (* 5 60) #'recentf-save-list)
 (setq
  confirm-kill-emacs 'y-or-n-p
  cursor-in-non-selected-windows nil
@@ -339,8 +340,10 @@
  line-number-display-limit-width most-positive-fixnum
  load-prefer-newer t
  read-buffer-completion-ignore-case t
+ recentf-max-saved-items nil
  require-final-newline t
  ring-bell-function #'ignore
+ savehist-mode t
  save-interprogram-paste-before-kill t
  vc-follow-symlinks t)
 (setq-default
