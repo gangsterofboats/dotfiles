@@ -321,7 +321,6 @@
 (global-auto-revert-mode t)
 (global-subword-mode t)
 (global-undo-tree-mode t)
-(run-at-time nil (* 5 60) #'recentf-save-list)
 (setq
  confirm-kill-emacs 'y-or-n-p
  cursor-in-non-selected-windows nil
