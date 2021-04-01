@@ -17,6 +17,6 @@
 ##############################################################################
 
 function fish_greeting
-    fortune -ace
+    fortune -e
     echo ""
 end
