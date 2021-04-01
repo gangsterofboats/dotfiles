@@ -20,3 +20,5 @@ function fish_greeting
     fortune -e
     echo ""
 end
+
+starship init fish | source
