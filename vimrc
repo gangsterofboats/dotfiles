@@ -1,6 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Vim configuration -- vimrc file                                          ""
-"" Copyright (C) 2020 Michael Wiseman                                       ""
+"" Copyright (C) 2021 Michael Wiseman                                       ""
 ""                                                                          ""
 "" This program is free software: you can redistribute it and/or modify it  ""
 "" under the terms of the GNU Affero General Public License as published by ""
@@ -16,28 +16,12 @@
 "" along with this program.  If not, see <https://www.gnu.org/licenses/>.   ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""" XDG compatibility
-""" Backup directories
-execute 'set backupdir^=' . expand('~/.local/share/vim/backup//')
-execute 'set directory^=' . expand('~/.local/share/vim/swap//')
-execute 'set undodir^=' . expand('~/.local/share/vim/undo//')
-
-""" Runtime paths
-set runtimepath-=~/.vim
-execute 'set runtimepath^=' . expand('~/.local/share/vim')
-set runtimepath-=~/.vim/after
-execute 'set runtimepath+=' . expand('~/.local/share/vim/after')
-
-""" Viminfo file
-"" set viminfo+=n~/vimfiles/viminfo
-execute 'set viminfofile=' . expand('~/.local/share/vim/viminfo')
-
 """" No Vi compatibility (must be set first)
 set nocompatible
 set cpoptions=""
 
 """" Packages
-call plug#begin(expand('~/.local/share/vim/plugged'))
+call plug#begin(expand('~/.vim/plugged'))
 
 """ Vim-Plug itself
 Plug 'junegunn/vim-plug'
@@ -125,6 +109,9 @@ call plug#end()
 """" Settings
 
 """ Backup file settings
+execute 'set backupdir^=' . expand('~/.vim/.backup//')
+execute 'set directory^=' . expand('~/.vim/.swp//')
+execute 'set undodir^=' . expand('~/.vim/.undo//')
 set backup
 set undofile
 
@@ -162,6 +149,9 @@ inoremap <C-U> <C-G>u<C-U>
 """ Move directory to match current file
 set autochdir
 set browsedir=buffer
+
+""" Move viminfo file
+set viminfo+=n~/.vim/viminfo
 
 """ Netrw settings
 let g:netrw_altv          = 1
