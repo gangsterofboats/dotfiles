@@ -158,6 +158,7 @@ set number
 
 """ Other settings
 let c_comment_strings=1
+let g:snipMate = { 'snippet_version' : 1 }
 packadd! matchit
 " packadd! shellmenu
 packadd! vimball
