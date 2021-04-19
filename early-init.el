@@ -32,5 +32,7 @@
         ;; ("nongnu" . 10)))
 
 ;;; Other settings
-(setq package-user-dir (expand-file-name "~/.local/share/emacs/packages/"))
+(setq
+ gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"
+ package-user-dir (expand-file-name "~/.local/share/emacs/packages/"))
 (tool-bar-mode -1)
