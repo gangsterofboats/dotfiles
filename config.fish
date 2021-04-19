@@ -1,6 +1,6 @@
 ##############################################################################
 ## Fish shell configuration -- config.fish file                             ##
-## Copyright (C) 2020 Michael Wiseman                                       ##
+## Copyright (C) 2021 Michael Wiseman                                       ##
 ##                                                                          ##
 ## This program is free software: you can redistribute it and/or modify it  ##
 ## under the terms of the GNU Affero General Public License as published by ##
@@ -22,3 +22,5 @@ function fish_greeting
 end
 
 starship init fish | source
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
