@@ -183,8 +183,8 @@
 (use-package markdown-mode)
 (use-package nov)
 (use-package org
-  :config (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo))
-  :ensure org-plus-contrib)
+  :init (setq org-export-backends '(ascii groff html icalendar latex man md odt org texinfo)))
+(use-package org-contrib)
 (use-package ox-asciidoc)
 (use-package ox-rst)
 (use-package paradox
