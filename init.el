@@ -297,7 +297,7 @@
 (load-theme 'srcery t)
 
 ;;; Set font
-(set-face-font 'default "Cascadia Code PL-16")
+(set-face-font 'default "Hack-16")
 
 ;;; View Mode
 (require 'view)
