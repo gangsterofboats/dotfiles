@@ -19,7 +19,7 @@
 """" General settings
 colorscheme moonfly
 set background=dark
-set guifont=Cascadia\ Code\ PL\ 12
+set guifont=Fira\ Code\ 12
 set guioptions+=!
 set guioptions-=t
 set lines=30 columns=100
