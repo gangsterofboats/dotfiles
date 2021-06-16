@@ -18,7 +18,7 @@
 
 """ General settings
 colorscheme moonfly
-set guifont=Cascadia\ Code\ PL:h12
+set guifont=Fira\ Code:h12
 set lines=30 columns=100
 set title titlestring=%t\ -\ Neovim
 
