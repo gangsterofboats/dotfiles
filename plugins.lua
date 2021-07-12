@@ -73,6 +73,27 @@ return require('packer').startup(function()
     use 'xolox/vim-lua-ftplugin'
     use 'xolox/vim-lua-inspect'
 
+    -- Neorg
+    use {
+        "vhyrro/neorg",
+        config = function()
+        require('neorg').setup {
+            -- Tell Neorg what modules to load
+            load = {
+                ["core.defaults"] = {}, -- Load all the default modules
+                ["core.norg.concealer"] = {}, -- Allows for use of icons
+                ["core.norg.dirman"] = { -- Manage your directories with Neorg
+                    config = {
+                        workspaces = {
+                           my_workspace = vim.fn.expand(vim.fn.stdpath('data') .. '/neorg')
+                        }
+                    }
+                }
+            },
+        }
+        end,
+    }
+
     -- Perl7/Perl6
     use 'c9s/perlomni.vim'
     use 'Raku/vim-raku'
@@ -83,32 +104,12 @@ return require('packer').startup(function()
     -- Typescript
     use 'HerringtonDarkholme/yats.vim'
 
+
     --- Other packages
-    use {
-       "vhyrro/neorg",
-       config = function()
-        require('neorg').setup {
-           -- Tell Neorg what modules to load
-           load = {
-            ["core.defaults"] = {}, -- Load all the default modules
-            ["core.norg.concealer"] = {}, -- Allows for use of icons
-            ["core.norg.dirman"] = { -- Manage your directories with Neorg
-               config = {
-                workspaces = {
-                   my_workspace = "~/neorg"
-                }
-               }
-            }
-           },
-                         }
-       end,
-    }
-
-
     -- use 'axvr/org.vim'
     use 'bronson/vim-trailing-whitespace'
     use 'ctrlpvim/ctrlp.vim'
-    use 'jceb/vim-orgmode'
+    -- use 'jceb/vim-orgmode'
     use 'jiangmiao/auto-pairs'
     use 'jlanzarotta/bufexplorer'
     use 'machakann/vim-sandwich'
@@ -116,6 +117,7 @@ return require('packer').startup(function()
     use 'mbbill/undotree'
     use 'psliwka/vim-smoothie'
     -- use 'Raimondi/delimitMate'
+    use 'svermeulen/vimpeccable'
     use 'tomtom/tlib_vim'
     use 'tpope/vim-repeat'
     use 'tpope/vim-speeddating'
