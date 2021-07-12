@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
--- Neovim configuration -- init.vim file                                    --
+-- Neovim configuration -- init.lua file                                    --
 -- Copyright (C) 2021 Michael Wiseman                                       --
 --                                                                          --
 -- This program is free software: you can redistribute it and/or modify it  --
@@ -22,13 +22,11 @@ vim.opt.cpoptions = ''
 ---- Settings
 
 --- Backup file settings
--- set backupdir-=.
 vim.cmd([[autocmd BufWritePre * let &backupext = substitute(expand('%:p:h'), '/', '%', 'g')]])
 vim.opt.backup = true
 vim.opt.undofile = true
 local backupdir = vim.fn.expand(vim.fn.stdpath('data') .. '/backup//')
 vim.opt.backupdir = backupdir
--- vim.opt.writebackup = true
 
 --- Enable command-line completion
 vim.opt.wildmode = 'list:longest,full'
@@ -50,22 +48,21 @@ vim.opt.tabstop = 4
 
 --- Keymaps
 vim.g.mapleader = '\\'
-vim.api.nvim_set_keymap('', 'gf', ':e <cfile><CR>')
-vim.api.nvim_set_keymap('', 'Y', 'y$')
+vim.api.nvim_set_keymap('', 'gf', ':e <cfile><CR>', {})
+vim.api.nvim_set_keymap('', 'Y', 'y$', {})
 vim.api.nvim_set_keymap('i', '<C-U>', '<C-G>u<C-U>', { noremap = true })
 
 --- Move directory to match current file
 vim.opt.autochdir = true
-vim.opt.browsedir = 'buffer'
 
 --- Netrw settings
-let g:netrw_altv          = 1
-let g:netrw_fastbrowse    = 2
-let g:netrw_keepdir       = 0
-let g:netrw_liststyle     = 2
-let g:netrw_retmap        = 1
-let g:netrw_silent        = 1
-let g:netrw_special_syntax= 1
+vim.g.netrw_altv = 1
+vim.g.netrw_fastbrowse = 2
+vim.g.netrw_keepdir = 0
+vim.g.netrw_liststyle = 2
+vim.g.netrw_retmap = 1
+vim.g.netrw_silent = 1
+vim.g.netrw_special_syntax = 1
 
 --- Search settings
 vim.opt.ignorecase = true
@@ -75,19 +72,18 @@ vim.opt.smartcase = true
 vim.opt.number = true
 
 --- Other settings
-let c_comment_strings=1
-packadd! matchit
--- packadd! shellmenu
-packadd! vimball
-vim.opt.cinoptions=>s,e0,n0,f0,{0,}4,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
-vim.opt.complete+=i
-vim.opt.display=truncate
-vim.opt.fillchars = { vert: '│', fold: '·' }
+vim.cmd('let c_comment_strings=1')
+vim.cmd('packadd! matchit')
+vim.cmd('packadd! vimball')
+vim.opt.cinoptions = '>s,e0,n0,f0,{0,}4,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30'
+vim.opt.complete = '.,w,b,u,t,i'
+vim.opt.display = 'truncate'
+vim.opt.fillchars = 'vert:│,fold:·'
 vim.opt.hidden = true
-vim.opt.inccommand=nosplit
-vim.opt.listchars = { tab: '>\\', trail: '-', extends:'>', precedes:'<', nbsp: '+' }
+vim.opt.inccommand = 'nosplit'
+vim.opt.listchars = 'tab:>\\,trail:-,extends:>,precedes:<,nbsp:+'
 vim.opt.nostartofline = true
-vim.opt.nrformats = { 'bin', 'hex', 'octal', 'alpha' }
+vim.opt.nrformats = 'bin,hex,octal,alpha'
 vim.opt.scrolloff = 5
 vim.opt.showmatch = true
 vim.opt.sidescrolloff = 5
