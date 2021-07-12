@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
--- Neovim configuration -- init.vim file                                    --
+-- Neovim configuration -- plugins.lua file                                 --
 -- Copyright (C) 2021 Michael Wiseman                                       --
 --                                                                          --
 -- This program is free software: you can redistribute it and/or modify it  --
@@ -15,9 +15,6 @@
 -- You should have received a copy of the GNU Affero General Public License --
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.   --
 ------------------------------------------------------------------------------
-
--- vim.cmd [[packadd packer.nvim]]
--- vim._update_package_paths()
 
 return require('packer').startup(function()
     -- Packer.nvim itself
@@ -39,16 +36,10 @@ return require('packer').startup(function()
     use 'honza/vim-snippets'
     use 'preservim/nerdcommenter'
     use 'sheerun/vim-polyglot'
-    -- use 'SirVer/ultisnips'
     use 'tpope/vim-commentary'
 
     -- C/C++
-    use {'vim-scripts/c.vim', ft = {'c', 'cpp'}}
-
-    -- Elixir
-    use 'carlosgaldino/elixir-snippets'
-    use 'elixir-editors/vim-elixir'
-
+    use { 'vim-scripts/c.vim', ft = { 'c', 'cpp' } }
 
     -- Elixir
     use 'carlosgaldino/elixir-snippets'
@@ -99,29 +90,24 @@ return require('packer').startup(function()
     use 'Raku/vim-raku'
 
     -- Python
-    use {'raimon49/requirements.txt.vim', ft = {'requirements'}}
+    use { 'raimon49/requirements.txt.vim', ft = { 'requirements' } }
 
     -- Typescript
     use 'HerringtonDarkholme/yats.vim'
 
-
     --- Other packages
-    -- use 'axvr/org.vim'
     use 'bronson/vim-trailing-whitespace'
     use 'ctrlpvim/ctrlp.vim'
-    -- use 'jceb/vim-orgmode'
     use 'jiangmiao/auto-pairs'
     use 'jlanzarotta/bufexplorer'
     use 'machakann/vim-sandwich'
     use 'MarcWeber/vim-addon-mw-utils'
     use 'mbbill/undotree'
     use 'psliwka/vim-smoothie'
-    -- use 'Raimondi/delimitMate'
     use 'svermeulen/vimpeccable'
     use 'tomtom/tlib_vim'
     use 'tpope/vim-repeat'
     use 'tpope/vim-speeddating'
-    -- use 'tpope/vim-surround'
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
     use 'vim-nerdtree/nerdtree'
