@@ -76,14 +76,14 @@ vim.cmd('let c_comment_strings=1')
 vim.cmd('packadd! matchit')
 vim.cmd('packadd! vimball')
 vim.opt.cinoptions = '>s,e0,n0,f0,{0,}4,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30'
-vim.opt.complete = '.,w,b,u,t,i'
+vim.opt.complete:append({ 'i' })
 vim.opt.display = 'truncate'
 vim.opt.fillchars = 'vert:│,fold:·'
 vim.opt.hidden = true
 vim.opt.inccommand = 'nosplit'
 vim.opt.listchars = 'tab:>\\,trail:-,extends:>,precedes:<,nbsp:+'
 vim.opt.nostartofline = true
-vim.opt.nrformats = 'bin,hex,octal,alpha'
+vim.opt.nrformats:append({ 'octal', 'alpha' })
 vim.opt.scrolloff = 5
 vim.opt.showmatch = true
 vim.opt.sidescrolloff = 5
