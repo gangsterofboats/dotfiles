@@ -21,12 +21,8 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     --- Color theme packages
-    use 'Alvarocz/vim-fresh'
-    use 'Alvarocz/vim-northpole'
     use 'bluz71/vim-moonfly-colors'
-    use 'rakr/vim-one'
-    use 'rakr/vim-two-firewatch'
-    use 'reedes/vim-colors-pencil'
+    use 'bluz71/vim-nightfly-guicolors'
     use 'srcery-colors/srcery-vim'
 
     --- Language packages
@@ -36,13 +32,12 @@ return require('packer').startup(function()
     use 'honza/vim-snippets'
     use 'preservim/nerdcommenter'
     use 'sheerun/vim-polyglot'
-    use 'tpope/vim-commentary'
+    use 'tpope/vim-endwise'
 
     -- C/C++
-    use { 'vim-scripts/c.vim', ft = { 'c', 'cpp' } }
+    use 'WolfgangMehner/c-support'
 
     -- Elixir
-    use 'carlosgaldino/elixir-snippets'
     use 'elixir-editors/vim-elixir'
 
     -- Erlang
@@ -50,19 +45,19 @@ return require('packer').startup(function()
     use 'vim-erlang/vim-erlang-runtime'
 
     -- Haskell
-    use 'dag/vim2hs'
+    use 'neovimhaskell/haskell-vim'
 
     -- HTML
-    use 'gko/vim-coloresque'
+    use 'ap/vim-css-color'
     use 'hail2u/vim-css3-syntax'
     use 'mattn/emmet-vim'
 
     -- Javascript
-    use 'othree/yajs.vim'
+    use 'yuezk/vim-js'
 
     -- Lua
-    use 'xolox/vim-lua-ftplugin'
-    use 'xolox/vim-lua-inspect'
+    use 'euclidianAce/BetterLua.vim'
+    use 'tjdevries/nlua.nvim'
 
     -- Neorg
     use {
@@ -86,32 +81,32 @@ return require('packer').startup(function()
     }
 
     -- Perl7/Perl6
-    use 'c9s/perlomni.vim'
+    use 'vim-perl/vim-perl'
     use 'Raku/vim-raku'
+    use 'WolfgangMehner/perl-support'
 
     -- Python
-    use { 'raimon49/requirements.txt.vim', ft = { 'requirements' } }
+    use 'raimon49/requirements.txt.vim'
 
     -- Typescript
     use 'HerringtonDarkholme/yats.vim'
 
     --- Other packages
-    use 'bronson/vim-trailing-whitespace'
     use 'ctrlpvim/ctrlp.vim'
-    use 'jiangmiao/auto-pairs'
     use 'jlanzarotta/bufexplorer'
     use 'machakann/vim-sandwich'
     use 'MarcWeber/vim-addon-mw-utils'
     use 'mbbill/undotree'
+    use 'ntpeters/vim-better-whitespace'
+    use 'preservim/nerdtree'
     use 'psliwka/vim-smoothie'
+    use 'Raimondi/delimitMate'
     use 'svermeulen/vimpeccable'
     use 'tomtom/tlib_vim'
     use 'tpope/vim-repeat'
     use 'tpope/vim-speeddating'
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
-    use 'vim-nerdtree/nerdtree'
-    use 'xolox/vim-misc'
     use 'yegappan/grep'
     use 'Yggdroot/indentLine'
 end)
