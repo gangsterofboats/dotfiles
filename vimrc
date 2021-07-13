@@ -27,12 +27,8 @@ call plug#begin(expand('~/.vim/plugged'))
 Plug 'junegunn/vim-plug'
 
 """ Color theme packages
-Plug 'Alvarocz/vim-fresh'
-Plug 'Alvarocz/vim-northpole'
 Plug 'bluz71/vim-moonfly-colors'
-Plug 'rakr/vim-one'
-Plug 'rakr/vim-two-firewatch'
-Plug 'reedes/vim-colors-pencil'
+Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'srcery-colors/srcery-vim'
 
 """ Language packages
@@ -42,14 +38,12 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
-" Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 
 "" C/C++
-Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
+Plug 'WolfgangMehner/c-support'
 
 "" Elixir
-Plug 'carlosgaldino/elixir-snippets'
 Plug 'elixir-editors/vim-elixir'
 
 "" Erlang
@@ -57,50 +51,48 @@ Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'vim-erlang/vim-erlang-runtime'
 
 "" Haskell
-Plug 'dag/vim2hs'
+Plug 'neovimhaskell/haskell-vim'
 
 "" HTML
-Plug 'gko/vim-coloresque'
+Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mattn/emmet-vim'
 
 "" Javascript
-Plug 'othree/yajs.vim'
+Plug 'yuezk/vim-js'
 
 "" Lua
-Plug 'xolox/vim-lua-ftplugin'
-Plug 'xolox/vim-lua-inspect'
+Plug 'euclidianAce/BetterLua.vim'
+Plug 'tjdevries/nlua.nvim'
 
 "" Perl7/Perl6
-Plug 'c9s/perlomni.vim'
 Plug 'Raku/vim-raku'
+Plug 'vim-perl/vim-perl'
+Plug 'WolfgangMehner/perl-support'
 
 "" Python
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+Plug 'raimon49/requirements.txt.vim'
 
 "" Typescript
 Plug 'HerringtonDarkholme/yats.vim'
 
 """ Other packages
-" Plug 'axvr/org.vim'
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'axvr/org.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jceb/vim-orgmode'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jceb/vim-orgmode'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'machakann/vim-sandwich'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mbbill/undotree'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'preservim/nerdtree'
 Plug 'psliwka/vim-smoothie'
-" Plug 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
-" Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-nerdtree/nerdtree'
-Plug 'xolox/vim-misc'
 Plug 'yegappan/grep'
 Plug 'Yggdroot/indentLine'
 
