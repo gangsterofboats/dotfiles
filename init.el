@@ -146,6 +146,7 @@
 
 ;;; Other packages
 (use-package adoc-mode)
+(use-package crossword)
 (use-package csv-mode)
 (use-package doom-modeline
   :init (doom-modeline-mode t)
