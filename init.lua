@@ -16,80 +16,87 @@
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.   --
 ------------------------------------------------------------------------------
 
----- No Vi/Vim compatibility (must be set first)
-vim.opt.cpoptions = ''
+---- Aliases
+local cmd = vim.cmd
+local fn = vim.fn
+local g = vim.g
+local opt = vim.opt
+
+---- No Vi/Vim compatibility
+opt.cpoptions = ''
 
 ---- Settings
 
 --- Backup file settings
-vim.cmd([[autocmd BufWritePre * let &backupext = substitute(expand('%:p:h'), '/', '%', 'g')]])
-vim.opt.backup = true
-vim.opt.undofile = true
-local backupdir = vim.fn.expand(vim.fn.stdpath('data') .. '/backup//')
-vim.opt.backupdir = backupdir
+cmd([[autocmd BufWritePre * let &backupext = substitute(expand('%:p:h'), '/', '%', 'g')]])
+opt.backup = true
+opt.undofile = true
+local backupdir = fn.expand(fn.stdpath('data') .. '/backup//')
+opt.backupdir = backupdir
 
 --- Enable command-line completion
-vim.opt.wildmode = 'list:longest,full'
--- vim.opt.wildmode = {'list', 'longest', 'full'}
+opt.wildmode = 'list:longest,full'
+-- opt.wildmode = {'list', 'longest', 'full'}
 
 --- Enable visual selection using the mouse in terminals
-vim.opt.mouse = 'a'
+opt.mouse = 'a'
 
 --- File settings
-vim.opt.fileformat = 'unix'
-vim.opt.fileformats = 'unix,dos,mac'
+opt.fileformat = 'unix'
+opt.fileformats = 'unix,dos,mac'
 
 --- Indent settings
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.smartindent = true
-vim.opt.softtabstop = 4
-vim.opt.tabstop = 4
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.smartindent = true
+opt.softtabstop = 4
+opt.tabstop = 4
 
 --- Keymaps
-vim.g.mapleader = '\\'
+g.mapleader = '\\'
 vim.api.nvim_set_keymap('', 'gf', ':e <cfile><CR>', {})
 vim.api.nvim_set_keymap('', 'Y', 'y$', {})
-vim.api.nvim_set_keymap('i', '<C-U>', '<C-G>u<C-U>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<C-u>', '<C-g>u<C-u>', {})
+vim.api.nvim_set_keymap('i', '<C-w>', '<C-g>u<C-w>', {})
 
 --- Move directory to match current file
-vim.opt.autochdir = true
+opt.autochdir = true
 
 --- Netrw settings
-vim.g.netrw_altv = 1
-vim.g.netrw_fastbrowse = 2
-vim.g.netrw_keepdir = 0
-vim.g.netrw_liststyle = 2
-vim.g.netrw_retmap = 1
-vim.g.netrw_silent = 1
-vim.g.netrw_special_syntax = 1
+g.netrw_altv = 1
+g.netrw_fastbrowse = 2
+g.netrw_keepdir = 0
+g.netrw_liststyle = 2
+g.netrw_retmap = 1
+g.netrw_silent = 1
+g.netrw_special_syntax = 1
 
 --- Search settings
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+opt.ignorecase = true
+opt.smartcase = true
 
 --- Set line numbers
-vim.opt.number = true
+opt.number = true
 
 --- Other settings
-vim.cmd('let c_comment_strings=1')
-vim.cmd('packadd! matchit')
-vim.cmd('packadd! vimball')
-vim.opt.cinoptions = '>s,e0,n0,f0,{0,}4,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30'
-vim.opt.complete:append({ 'i' })
-vim.opt.display = 'truncate'
-vim.opt.fillchars = 'vert:│,fold:·'
-vim.opt.hidden = true
-vim.opt.inccommand = 'nosplit'
-vim.opt.listchars = 'tab:>\\,trail:-,extends:>,precedes:<,nbsp:+'
-vim.opt.nostartofline = true
-vim.opt.nrformats:append({ 'octal', 'alpha' })
-vim.opt.scrolloff = 5
-vim.opt.showmatch = true
-vim.opt.sidescrolloff = 5
-vim.opt.termguicolors = true
-vim.opt.textwidth = 80
-vim.opt.ttimeoutlen = 100
+cmd('let c_comment_strings=1')
+cmd([[let g:snipMate = { 'snippet_version' : 1 } ]])
+cmd('packadd! matchit')
+cmd('packadd! vimball')
+opt.cinoptions = '>s,e0,n0,f0,{0,}4,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30'
+opt.complete:append({ 'i' })
+opt.display = 'truncate'
+opt.fillchars = 'vert:│,fold:·'
+opt.hidden = true
+opt.inccommand = 'nosplit'
+opt.listchars = 'tab:>\\ ,trail:-,extends:>,precedes:<,nbsp:+'
+opt.nrformats:append({ 'octal', 'alpha' })
+opt.scrolloff = 5
+opt.showmatch = true
+opt.sidescrolloff = 5
+opt.termguicolors = true
+opt.textwidth = 80
+opt.ttimeoutlen = 100
 
 ---- Functions
 
