@@ -81,8 +81,8 @@ return require('packer').startup(function()
     }
 
     -- Perl7/Perl6
-    use 'vim-perl/vim-perl'
     use 'Raku/vim-raku'
+    use 'vim-perl/vim-perl'
     use 'WolfgangMehner/perl-support'
 
     -- Python
