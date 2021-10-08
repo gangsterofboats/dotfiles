@@ -197,6 +197,7 @@
 (use-package smartparens
   :config (smartparens-global-mode t))
 (use-package speed-type)
+(use-package undo-tree)
 (use-package vdiff)
 (use-package which-key
   :config (which-key-mode))
