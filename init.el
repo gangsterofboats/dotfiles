@@ -171,7 +171,10 @@
 (use-package gnu-elpa-keyring-update)
 (use-package helm
   :demand t
-  :bind ("M-a" . helm-M-x)
+  :bind
+  (([remap execute-extended-command] . helm-M-x)
+   ([remap find-file] . helm-find-files)
+   ([remap isearch-forward] . helm-swoop))
   :config (helm-mode t))
 (use-package helm-swoop
   :bind ("C-f" . helm-swoop))
@@ -201,10 +204,6 @@
 (use-package vdiff)
 (use-package which-key
   :config (which-key-mode))
-;; (use-package xah-fly-keys
-;;   :config
-;;   (xah-fly-keys-set-layout "qwerty")
-;;   (xah-fly-keys t))
 (use-package xah-replace-pairs)
 (use-package yaml-mode)
 
@@ -331,10 +330,9 @@
  default-frame-alist '((width . 125) (height . 30))
  ediff-window-setup-function 'ediff-setup-windows-plain
  frame-title-format '("%b - Emacs " emacs-version)
- ;; fringes-outside-margins t
  gc-cons-threshold (* 100 1024 1024)
  history-delete-duplicates t
- history-length t ; history-length 1000
+ history-length t
  inhibit-startup-screen t
  initial-scratch-message nil
  kill-whole-line t
@@ -353,7 +351,6 @@
  indent-tabs-mode nil
  tab-width 4)
 (show-paren-mode t)
-;; (which-function-mode t)
 
 ;;;; Functions
 
