@@ -146,10 +146,6 @@
 
 ;;; Other packages
 (use-package adoc-mode)
-(use-package counsel
-  :bind
-  (("M-a" . counsel-M-x)
-   ("C-o" . counsel-find-file)))
 (use-package crossword)
 (use-package csv-mode)
 (use-package doom-modeline
@@ -173,32 +169,18 @@
 (use-package fountain-mode)
 (use-package fzf)
 (use-package gnu-elpa-keyring-update)
-(use-package helm)
-;; :demand t
-;; :bind ("M-a" . helm-M-x)
-;; :config (helm-mode t))
-;; (use-package helm-swoop
-;;  :bind ("C-f" . helm-swoop))
+(use-package helm
+  :demand t
+  :bind ("M-a" . helm-M-x)
+  :config (helm-mode t))
+(use-package helm-swoop
+  :bind ("C-f" . helm-swoop))
 (use-package helpful
   :bind
   (("C-h f" . helpful-callable)
    ("C-h v" . helpful-variable)
    ("C-h k" . helpful-key)
    ("C-c C-d" . helpful-at-point)))
-(use-package ivy
-  :init (ivy-mode)
-  :config
-  (setq
-   enable-recursive-minibuffers t
-   ivy-count-format "%d/%d "
-   ivy-use-virtual-buffers t))
-(use-package ivy-prescient
-  :after (counsel)
-  :config
-  (ivy-prescient-mode)
-  (setq prescient-persist-mode t))
-(use-package ivy-rich
-  :hook (counsel-mode . ivy-rich-mode))
 (use-package markdown-mode)
 (use-package nov)
 (use-package org
@@ -214,8 +196,6 @@
 (use-package rainbow-mode)
 (use-package smartparens
   :config (smartparens-global-mode t))
-(use-package swiper
-  :bind ("C-f" . swiper))
 (use-package speed-type)
 (use-package undo-tree)
 (use-package vdiff)
@@ -264,8 +244,8 @@
 (add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("miniperl" . cperl-mode))
 (setq
- ; Style settings
- ; Basically the PBP setting of cperl-set-style
+  ; Style settings
+  ; Basically the PBP setting of cperl-set-style
  cperl-brace-offset 0
  cperl-continued-brace-offset 0
  cperl-continued-statement-offset 4
@@ -276,7 +256,7 @@
  cperl-label-offset -2
  cperl-merge-trailing-else nil
  cperl-tab-always-indent t
- ; Other settings
+  ; Other settings
  cperl-hairy t
  cperl-highlight-variables-indiscriminately t
  cperl-indent-wrt-brace nil)
