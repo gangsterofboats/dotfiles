@@ -174,6 +174,8 @@
   :bind
   (([remap execute-extended-command] . helm-M-x)
    ([remap find-file] . helm-find-files)
+   ([remap list-buffers] . helm-buffers-list)
+   ([remap switch-to-buffer] . helm-mini)
    ([remap isearch-forward] . helm-swoop))
   :config (helm-mode t))
 (use-package helm-swoop
