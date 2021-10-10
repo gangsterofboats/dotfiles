@@ -193,7 +193,10 @@
    ivy-count-format "%d/%d "
    ivy-use-virtual-buffers t))
 (use-package ivy-prescient
-  :after (counsel))
+  :after (counsel)
+  :config
+  (ivy-prescient-mode)
+  (setq prescient-persist-mode t))
 (use-package ivy-rich
   :hook (counsel-mode . ivy-rich-mode))
 (use-package markdown-mode)
@@ -212,7 +215,7 @@
 (use-package smartparens
   :config (smartparens-global-mode t))
 (use-package swiper
-  :bind ("C-f" . swiper-isearch))
+  :bind ("C-f" . swiper))
 (use-package speed-type)
 (use-package undo-tree)
 (use-package vdiff)
