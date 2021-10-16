@@ -202,7 +202,9 @@
 (use-package smartparens
   :config (smartparens-global-mode t))
 (use-package speed-type)
-(use-package undo-tree)
+(use-package undo-fu)
+(use-package undo-tree
+  :config (global-undo-tree-mode t))
 (use-package vdiff)
 (use-package which-key
   :config (which-key-mode))
@@ -323,7 +325,6 @@
 (display-time-mode t)
 (global-auto-revert-mode t)
 (global-subword-mode t)
-(global-undo-tree-mode t)
 (setq
  confirm-kill-emacs 'y-or-n-p
  cursor-in-non-selected-windows nil
