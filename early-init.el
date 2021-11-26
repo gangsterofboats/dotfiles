@@ -21,13 +21,11 @@
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/devel/")              ; GNU
         ("nongnu" . "https://elpa.nongnu.org/nongnu-devel/") ; NonGNU
-        ("melpa" . "https://melpa.org/packages/")            ; MELPA
-        ("org" . "https://orgmode.org/elpa/")))              ; Org Mode
+        ("melpa" . "https://melpa.org/packages/")))          ; MELPA
 
 ;;; Package archives order
 (setq package-archive-priorities
       '(("melpa" . 20)
-        ("org" . 20)
         ("gnu" . 10)
         ("nongnu" . 10)))
 
