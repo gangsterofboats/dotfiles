@@ -1,6 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Neovim configuration -- init.vim file                                    ""
-"" Copyright (C) 2020 Michael Wiseman                                       ""
+"" Copyright (C) 2022 Michael Wiseman                                       ""
 ""                                                                          ""
 "" This program is free software: you can redistribute it and/or modify it  ""
 "" under the terms of the GNU Affero General Public License as published by ""
@@ -44,41 +44,8 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 
-"" C/C++
-Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
-
-"" Elixir
-Plug 'carlosgaldino/elixir-snippets'
-Plug 'elixir-editors/vim-elixir'
-
-"" Erlang
-Plug 'vim-erlang/vim-erlang-omnicomplete'
-Plug 'vim-erlang/vim-erlang-runtime'
-
-"" Haskell
-Plug 'dag/vim2hs'
-
-"" HTML
-Plug 'gko/vim-coloresque'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'mattn/emmet-vim'
-
-"" Javascript
-Plug 'othree/yajs.vim'
-
-"" Lua
-Plug 'xolox/vim-lua-ftplugin'
-Plug 'xolox/vim-lua-inspect'
-
-"" Perl7/Perl6
-Plug 'c9s/perlomni.vim'
-Plug 'Raku/vim-raku'
-
 "" Python
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-
-"" Typescript
-Plug 'HerringtonDarkholme/yats.vim'
 
 """ Other packages
 " Plug 'axvr/org.vim'
