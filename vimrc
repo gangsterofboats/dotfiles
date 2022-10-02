@@ -1,6 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Vim configuration -- vimrc file                                          ""
-"" Copyright (C) 2021 Michael Wiseman                                       ""
+"" Copyright (C) 2022 Michael Wiseman                                       ""
 ""                                                                          ""
 "" This program is free software: you can redistribute it and/or modify it  ""
 "" under the terms of the GNU Affero General Public License as published by ""
@@ -40,41 +40,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-endwise'
 
-"" C/C++
-Plug 'WolfgangMehner/c-support'
-
-"" Elixir
-Plug 'elixir-editors/vim-elixir'
-
-"" Erlang
-Plug 'vim-erlang/vim-erlang-omnicomplete'
-Plug 'vim-erlang/vim-erlang-runtime'
-
-"" Haskell
-Plug 'neovimhaskell/haskell-vim'
-
-"" HTML
-Plug 'ap/vim-css-color'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'mattn/emmet-vim'
-
-"" Javascript
-Plug 'yuezk/vim-js'
-
-"" Lua
-Plug 'euclidianAce/BetterLua.vim'
-Plug 'tjdevries/nlua.nvim'
-
-"" Perl7/Perl6
-Plug 'Raku/vim-raku'
-Plug 'vim-perl/vim-perl'
-Plug 'WolfgangMehner/perl-support'
-
 "" Python
 Plug 'raimon49/requirements.txt.vim'
-
-"" Typescript
-Plug 'HerringtonDarkholme/yats.vim'
 
 """ Other packages
 Plug 'axvr/org.vim'
