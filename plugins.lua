@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 -- Neovim configuration -- plugins.lua file                                 --
--- Copyright (C) 2021 Michael Wiseman                                       --
+-- Copyright (C) 2022 Michael Wiseman                                       --
 --                                                                          --
 -- This program is free software: you can redistribute it and/or modify it  --
 -- under the terms of the GNU Affero General Public License as published by --
@@ -34,31 +34,6 @@ return require('packer').startup(function()
     use 'sheerun/vim-polyglot'
     use 'tpope/vim-endwise'
 
-    -- C/C++
-    use 'WolfgangMehner/c-support'
-
-    -- Elixir
-    use 'elixir-editors/vim-elixir'
-
-    -- Erlang
-    use 'vim-erlang/vim-erlang-omnicomplete'
-    use 'vim-erlang/vim-erlang-runtime'
-
-    -- Haskell
-    use 'neovimhaskell/haskell-vim'
-
-    -- HTML
-    use 'ap/vim-css-color'
-    use 'hail2u/vim-css3-syntax'
-    use 'mattn/emmet-vim'
-
-    -- Javascript
-    use 'yuezk/vim-js'
-
-    -- Lua
-    use 'euclidianAce/BetterLua.vim'
-    use 'tjdevries/nlua.nvim'
-
     -- Neorg
     use {
         "vhyrro/neorg",
@@ -80,16 +55,8 @@ return require('packer').startup(function()
         end,
     }
 
-    -- Perl7/Perl6
-    use 'Raku/vim-raku'
-    use 'vim-perl/vim-perl'
-    use 'WolfgangMehner/perl-support'
-
     -- Python
     use 'raimon49/requirements.txt.vim'
-
-    -- Typescript
-    use 'HerringtonDarkholme/yats.vim'
 
     --- Other packages
     use 'ctrlpvim/ctrlp.vim'
