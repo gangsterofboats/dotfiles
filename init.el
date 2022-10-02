@@ -1,7 +1,7 @@
 ;;;; -*- lexical-binding: t -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs configuration -- init.el file                                      ;;
-;; Copyright (C) 2021 Michael Wiseman                                       ;;
+;; Copyright (C) 2022 Michael Wiseman                                       ;;
 ;;                                                                          ;;
 ;; This program is free software: you can redistribute it and/or modify it  ;;
 ;; under the terms of the GNU Affero General Public License as published by ;;
@@ -38,73 +38,8 @@
   :bind ("C-^" . yas-global-mode))
 (use-package yasnippet-snippets)
 
-;; COBOL
-(use-package cobol-mode
-  :config
-  (setq
-   cobol-format-style 'lower-case
-   cobol-source-format 'free))
-
-;; Coffeescript
-(use-package coffee-mode
-  :config (setq coffee-tab-width 4))
-
-;; Common Lisp
-(use-package sly)
-
-;; Crystal
-(use-package crystal-mode)
-
-;; D
-(use-package d-mode)
-
-;; Elixir
-(use-package alchemist)
-(use-package elixir-mode)
-
 ;; Emacs Lisp
 (use-package xah-elisp-mode)
-
-;; Erlang
-(use-package erlang)
-
-;; Go
-(use-package go-mode)
-
-;; Haskell
-(use-package haskell-mode)
-
-;; HTML
-(use-package emmet-mode
-  :hook (sgml-mode css-mode))
-(use-package web-mode)
-(use-package xah-css-mode
-  :after (xah-replace-pairs))
-
-;; Javascript
-(use-package js2-mode
-  :mode ("\\.js$" . js2-mode)
-  :config
-  (setq
-   js-indent-level 4
-   js2-indent-level 4
-   js2-basic-offset 4))
-(use-package json-mode)
-
-;; Julia
-(use-package julia-mode)
-
-;; Lua
-(use-package lua-mode)
-
-;; Nim
-(use-package nim-mode)
-
-;; OCaml
-(use-package tuareg)
-
-;; Perl6
-(use-package raku-mode)
 
 ;; Powershell
 (use-package powershell)
@@ -112,37 +47,12 @@
 ;; Python
 (use-package elpy)
 
-;; R
-(use-package ess)
-
-;; Racket
-(use-package racket-mode)
-
 ;; Ruby
 (use-package enh-ruby-mode
   :mode ("\\.rb\\'" . ruby-mode))
 
-;; Rust
-(use-package rust-mode)
-
-;; Smalltalk
-(use-package smalltalk-mode)
-
-;; SQL
-(use-package sql-indent)
-
-;; TeX/LaTeX
-(use-package tex
-  :ensure auctex)
-
-;; Typescript
-(use-package tide)
-
 ;; VimL/Vimscript
 (use-package vimrc-mode)
-
-;; Zig
-(use-package zig-mode)
 
 ;;; Other packages
 (use-package adoc-mode)
@@ -211,11 +121,7 @@
 (use-package xah-replace-pairs)
 (use-package yaml-mode)
 
-;;; Local packages
-(use-package arc
-  :load-path "lisp/"
-  :mode ("\\.arc$" . arc-mode))
-
+;;; Local package
 (use-package helm-fzf
   :load-path "lisp/")
 
@@ -235,34 +141,6 @@
  undo-tree-auto-save-history t
  undo-tree-history-directory-alist `(("." . ,(expand-file-name "~/.local/share/emacs/undo/")))
  version-control t)
-
-;;; C/C++/CC-Mode Settings
-(setq
- c-basic-offset 4
- c-default-style "bsd")
-
-;;; CPerl settings (for Perl5/7)
-(add-to-list 'auto-mode-alist '("\\.\\([pP][Llm]\\|al\\)\\'" . cperl-mode))
-(add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
-(add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
-(add-to-list 'interpreter-mode-alist '("miniperl" . cperl-mode))
-(setq
-  ; Style settings
-  ; Basically the PBP setting of cperl-set-style
- cperl-brace-offset 0
- cperl-continued-brace-offset 0
- cperl-continued-statement-offset 4
- cperl-extra-newline-before-brace nil
- cperl-extra-newline-before-brace-multiline nil
- cperl-indent-level 4
- cperl-indent-parens-as-block t
- cperl-label-offset -2
- cperl-merge-trailing-else nil
- cperl-tab-always-indent t
-  ; Other settings
- cperl-hairy t
- cperl-highlight-variables-indiscriminately t
- cperl-indent-wrt-brace nil)
 
 ;;; Ensure UTF-8 usage
 (prefer-coding-system 'utf-8-unix)
