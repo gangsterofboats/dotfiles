@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 -- Neovim configuration -- init.lua file                                    --
--- Copyright (C) 2021 Michael Wiseman                                       --
+-- Copyright (C) 2022 Michael Wiseman                                       --
 --                                                                          --
 -- This program is free software: you can redistribute it and/or modify it  --
 -- under the terms of the GNU Affero General Public License as published by --
@@ -24,6 +24,9 @@ local opt = vim.opt
 
 ---- No Vi/Vim compatibility
 opt.cpoptions = ''
+
+---- Load plugins
+require('plugins')
 
 ---- Settings
 
