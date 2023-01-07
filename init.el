@@ -1,7 +1,7 @@
 ;;;; -*- lexical-binding: t -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs configuration -- init.el file                                      ;;
-;; Copyright (C) 2022 Michael Wiseman                                       ;;
+;; Copyright (C) 2023 Michael Wiseman                                       ;;
 ;;                                                                          ;;
 ;; This program is free software: you can redistribute it and/or modify it  ;;
 ;; under the terms of the GNU Affero General Public License as published by ;;
@@ -37,9 +37,6 @@
 (use-package yasnippet
   :bind ("C-^" . yas-global-mode))
 (use-package yasnippet-snippets)
-
-;; Emacs Lisp
-(use-package xah-elisp-mode)
 
 ;; Powershell
 (use-package powershell)
@@ -118,7 +115,6 @@
 (use-package vdiff)
 (use-package which-key
   :config (which-key-mode))
-(use-package xah-replace-pairs)
 (use-package yaml-mode)
 
 ;;; Local package
