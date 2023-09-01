@@ -215,6 +215,7 @@
  kill-whole-line t
  line-number-display-limit-width most-positive-fixnum
  load-prefer-newer t
+ package-install-upgrade-built-in t
  read-buffer-completion-ignore-case t
  recentf-max-saved-items nil
  require-final-newline t
