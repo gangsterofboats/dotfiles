@@ -199,15 +199,19 @@
 (display-time-mode t)
 (global-auto-revert-mode t)
 (global-subword-mode t)
+(pixel-scroll-precision-mode t)
 (setq
+ completion-cycle-threshold t
+ completions-detailed t
  confirm-kill-emacs 'y-or-n-p
  cursor-in-non-selected-windows nil
  custom-file (make-temp-file "")
+ display-time-default-load-average nil
+ enable-recursive-minibuffers t
  initial-frame-alist '((width . 125) (height . 30))
  default-frame-alist '((width . 125) (height . 30))
  ediff-window-setup-function 'ediff-setup-windows-plain
  frame-title-format '("%b - Emacs " emacs-version)
- gc-cons-threshold (* 100 1024 1024)
  history-delete-duplicates t
  history-length t
  inhibit-startup-screen t
@@ -222,11 +226,14 @@
  ring-bell-function #'ignore
  savehist-mode t
  save-interprogram-paste-before-kill t
+ switch-to-buffer-obey-display-actions t
+ tab-always-indent 'complete
  vc-follow-symlinks t)
 (setq-default
  dired-listing-switches "-alh"
  fill-column 80
  indent-tabs-mode nil
+ indicate-buffer-boundaries 'left
  tab-width 4)
 (show-paren-mode t)
 
