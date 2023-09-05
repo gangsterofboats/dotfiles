@@ -1,7 +1,7 @@
 ;;;; -*- lexical-binding: t -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs configuration -- early-init.el file                                ;;
-;; Copyright (C) 2021 Michael Wiseman                                       ;;
+;; Copyright (C) 2023 Michael Wiseman                                       ;;
 ;;                                                                          ;;
 ;; This program is free software: you can redistribute it and/or modify it  ;;
 ;; under the terms of the GNU Affero General Public License as published by ;;
@@ -31,6 +31,10 @@
 
 ;;; Other settings
 (setq
+ byte-compile-warnings '(not obsolete)
+ frame-resize-pixelwise t
+ gc-cons-threshold (* 100 1024 1024)
  gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"
- package-user-dir (expand-file-name "~/.local/share/emacs/packages/"))
+ package-user-dir (expand-file-name "~/.local/share/emacs/packages/")
+ warning-suppress-log-types '((comp) (bytecomp)))
 (tool-bar-mode -1)
