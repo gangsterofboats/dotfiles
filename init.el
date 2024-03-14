@@ -193,6 +193,7 @@
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 (blink-cursor-mode t)
 (column-number-mode t)
+(desktop-save-mode t)
 (display-time-mode t)
 (global-auto-revert-mode t)
 (global-subword-mode t)
