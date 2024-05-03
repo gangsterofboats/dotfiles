@@ -173,7 +173,7 @@
 (load-theme 'srcery t)
 
 ;;; Set font
-(set-face-font 'default "Fira Code-16")
+(set-face-font 'default "Cascadia Code NF-16")
 
 ;;; View Mode
 (require 'view)
