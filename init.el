@@ -107,9 +107,10 @@
   :config (smartparens-global-mode t))
 (use-package speed-type)
 (use-package undo-fu)
-(use-package undo-tree
-  :config (global-undo-tree-mode t))
+(use-package undo-fu-session
+  :config (undo-fu-session-global-mode))
 (use-package vdiff)
+(use-package vundo)
 (use-package which-key
   :config (which-key-mode))
 (use-package yaml-mode)
@@ -131,8 +132,9 @@
  delete-old-versions t
  kept-new-versions 10
  kept-old-versions 5
- undo-tree-auto-save-history t
- undo-tree-history-directory-alist `(("." . ,(expand-file-name "~/.local/share/emacs/undo/")))
+ undo-limit 134217728 ; 2^27
+ undo-strong-limit 268435456 ; 2^28
+ undo-outer-limit 1073741824 ; 2^30
  version-control t)
 
 ;;; Ensure UTF-8 usage
