@@ -1,6 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Vim configuration -- vimrc file                                          ""
-"" Copyright (C) 2022 Michael Wiseman                                       ""
+"" Copyright (C) 2025 Michael Wiseman                                       ""
 ""                                                                          ""
 "" This program is free software: you can redistribute it and/or modify it  ""
 "" under the terms of the GNU Affero General Public License as published by ""
@@ -56,6 +56,7 @@ Plug 'preservim/nerdtree'
 Plug 'psliwka/vim-smoothie'
 Plug 'Raimondi/delimitMate'
 Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'vim-airline/vim-airline'
