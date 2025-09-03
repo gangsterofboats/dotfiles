@@ -1,7 +1,7 @@
 ;;;; -*- lexical-binding: t -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs configuration -- init.el file                                      ;;
-;; Copyright (C) 2024 Michael Wiseman                                       ;;
+;; Copyright (C) 2025 Michael Wiseman                                       ;;
 ;;                                                                          ;;
 ;; This program is free software: you can redistribute it and/or modify it  ;;
 ;; under the terms of the GNU Affero General Public License as published by ;;
@@ -77,7 +77,6 @@
 (use-package fzf)
 (use-package gnu-elpa-keyring-update)
 (use-package helm
-  :demand t
   :bind
   (([remap execute-extended-command] . helm-M-x)
    ([remap find-file] . helm-find-files)
@@ -85,8 +84,7 @@
    ([remap switch-to-buffer] . helm-mini)
    ([remap isearch-forward] . helm-swoop))
   :config (helm-mode t))
-(use-package helm-swoop
-  :bind ("C-f" . helm-swoop))
+(use-package helm-swoop)
 (use-package helpful
   :bind
   (("C-h f" . helpful-callable)
@@ -114,10 +112,6 @@
 (use-package which-key
   :config (which-key-mode))
 (use-package yaml-mode)
-
-;;; Local package
-(use-package helm-fzf
-  :load-path "lisp/")
 
 ;;;; Settings
 
