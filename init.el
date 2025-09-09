@@ -19,104 +19,60 @@
 
 ;;;; Packages
 
-;;; Enable Use Package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(eval-when-compile
-  (require 'use-package))
-(setq use-package-always-ensure t)
-
-;;; Color theme packages
-(use-package modus-themes)
-(use-package srcery-theme)
-
-;;; Languae packages
-
-;; Multiple languages
-(use-package yasnippet
-  :bind ("C-^" . yas-global-mode))
-(use-package yasnippet-snippets)
-
-;; Powershell
-(use-package powershell)
-
-;; Python
-(use-package elpy)
-
-;; Ruby
-(use-package enh-ruby-mode
-  :mode ("\\.rb\\'" . ruby-mode))
-
-;; VimL/Vimscript
-(use-package vimrc-mode)
-
-;;; Other packages
-(use-package adoc-mode)
-(use-package crossword)
+(use-package consult
+  :bind
+  (("C-x b" . consult-buffer)
+   ("C-c l" . consult-goto-line)
+   ("C-f" . consult-line)))
 (use-package csv-mode)
 (use-package doom-modeline
   :init (doom-modeline-mode t)
   :config
   (setq
-   doom-modeline-bar-width 3
-   doom-modeline-gnus t
    doom-modeline-icon (display-graphic-p)
    doom-modeline-unicode-fallback t))
-(use-package eglot)
+(use-package embark
+  :bind
+  (("C-." . embark-act)
+   ("C-h B" . embark-bindings)))
+(use-package embark-consult)
 (use-package ergoemacs-mode
-  :demand t
-  :config
-  (ergoemacs-mode t)
-  (setq
-   ergoemacs-theme nil
-   ergoemacs-keyboard-layout "us"))
+ :config
+ (ergoemacs-mode t))
+(use-package ergoemacs-mode)
 (use-package expand-region
   :bind ("C-," . er/expand-region))
-(use-package fountain-mode)
-(use-package fzf)
 (use-package gnu-elpa-keyring-update)
-(use-package helm
-  :bind
-  (([remap execute-extended-command] . helm-M-x)
-   ([remap find-file] . helm-find-files)
-   ([remap list-buffers] . ibuffer)
-   ([remap switch-to-buffer] . helm-mini)
-   ([remap isearch-forward] . helm-swoop))
-  :config (helm-mode t))
-(use-package helm-swoop)
 (use-package helpful
   :bind
-  (("C-h f" . helpful-callable)
+  (("C-h F" . helpful-function)
+   ("C-h f" . helpful-callable)
    ("C-h v" . helpful-variable)
    ("C-h k" . helpful-key)
+   ("C-h x" . helpful-command)
    ("C-c C-d" . helpful-at-point)))
+(use-package marginalia
+  :init (marginalia-mode))
 (use-package markdown-mode)
-(use-package nov)
-(use-package org)
-(use-package ox-pandoc)
-(use-package paradox
-  :config
-  (setq
-   paradox-execute-asynchronously nil
-   paradox-github-token t))
+(use-package orderless
+  :config (setq completion-styles '(orderless basic)))
 (use-package rainbow-mode)
 (use-package smartparens
-  :config (smartparens-global-mode t))
-(use-package speed-type)
+  :config
+  (require 'smartparens-config)
+  (smartparens-global-mode t))
+(use-package srcery-theme
+  :config (load-theme 'srcery t))
 (use-package undo-fu)
 (use-package undo-fu-session
   :config (undo-fu-session-global-mode))
-(use-package vdiff)
+(use-package vertico
+  :init
+  (vertico-mode)
+  (vertico-buffer-mode))
 (use-package vundo)
-(use-package which-key
-  :config (which-key-mode))
-(use-package yaml-mode)
 
 ;;;; Settings
-
-;;; Add directory to load path
-(add-to-list 'load-path (expand-file-name "~/.local/share/emacs/lisp/"))
 
 ;;; Backup settings
 (setq
@@ -149,8 +105,7 @@
 ;;; Hippie Expand
 (global-set-key (kbd "C-;") #'hippie-expand)
 (setq hippie-expand-try-functions-list
-      '(
-        try-expand-dabbrev
+      '(try-expand-dabbrev
         try-expand-dabbrev-all-buffers
         try-expand-dabbrev-from-kill
         try-complete-lisp-symbol-partially
@@ -159,14 +114,10 @@
         try-complete-file-name
         try-expand-all-abbrevs
         try-expand-list
-        try-expand-line
-        ))
+        try-expand-line))
 
 ;;; Line Numbers
 (global-display-line-numbers-mode t)
-
-;;; Set color theme
-(load-theme 'srcery t)
 
 ;;; Set font
 (set-face-font 'default "Cascadia Code NF-16")
@@ -176,7 +127,6 @@
 (global-set-key (kbd "C-x C-q") #'view-mode)
 
 ;;; Some keybindings
-(global-set-key (kbd "C-#") #'global-company-mode)
 (global-set-key (kbd "C-'") #'comment-line)
 (global-set-key (kbd "C-\"") #'comment-dwim)
 (global-set-key (kbd "C-|") #'comment-box)
@@ -184,6 +134,7 @@
 (global-set-key (kbd "M-A") #'eval-expression)
 (global-set-key (kbd "C-x C-d") #'dired) ; Switch these two.  Given buffer list keybindings, makes more sense
 (global-set-key (kbd "C-x d") #'list-directory)
+(global-set-key (kbd "C-x C-b") #'ibuffer)
 
 ;;; Other settings
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
@@ -199,7 +150,8 @@
  completions-detailed t
  confirm-kill-emacs 'y-or-n-p
  cursor-in-non-selected-windows nil
- custom-file (make-temp-file "")
+ custom-file (expand-file-name "custom.el" user-emacs-directory)
+ desktop-load-locked-desktop t
  display-time-default-load-average nil
  enable-recursive-minibuffers t
  initial-frame-alist '((width . 125) (height . 30))
@@ -224,12 +176,12 @@
  tab-always-indent 'complete
  vc-follow-symlinks t)
 (setq-default
- dired-listing-switches "-alh"
  fill-column 80
  indent-tabs-mode nil
  indicate-buffer-boundaries 'left
  tab-width 4)
 (show-paren-mode t)
+(which-key-mode t)
 
 ;;;; Functions
 
