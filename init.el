@@ -23,7 +23,7 @@
   :bind
   (("C-x b" . consult-buffer)
    ("C-c l" . consult-goto-line)
-   ("C-f" . consult-line)))
+   ("C-c f" . consult-line)))
 (use-package csv-mode)
 (use-package doom-modeline
   :init (doom-modeline-mode t)
