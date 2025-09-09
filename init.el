@@ -19,11 +19,6 @@
 
 ;;;; Packages
 
-(use-package consult
-  :bind
-  (("C-x b" . consult-buffer)
-   ("C-c l" . consult-goto-line)
-   ("C-c f" . consult-line)))
 (use-package csv-mode)
 (use-package doom-modeline
   :init (doom-modeline-mode t)
@@ -31,18 +26,19 @@
   (setq
    doom-modeline-icon (display-graphic-p)
    doom-modeline-unicode-fallback t))
-(use-package embark
-  :bind
-  (("C-." . embark-act)
-   ("C-h B" . embark-bindings)))
-(use-package embark-consult)
 (use-package ergoemacs-mode
  :config
  (ergoemacs-mode t))
-(use-package ergoemacs-mode)
 (use-package expand-region
   :bind ("C-," . er/expand-region))
 (use-package gnu-elpa-keyring-update)
+(use-package helm
+  :bind
+  (([remap execute-extended-command] . helm-M-x)
+   ([remap find-file] . helm-find-files)
+   ([remap switch-to-buffer] . helm-mini)
+   ([remap isearch-forward] . helm-occur))
+  :config (helm-mode t))
 (use-package helpful
   :bind
   (("C-h F" . helpful-function)
@@ -51,11 +47,7 @@
    ("C-h k" . helpful-key)
    ("C-h x" . helpful-command)
    ("C-c C-d" . helpful-at-point)))
-(use-package marginalia
-  :init (marginalia-mode))
 (use-package markdown-mode)
-(use-package orderless
-  :config (setq completion-styles '(orderless basic)))
 (use-package rainbow-mode)
 (use-package smartparens
   :config
@@ -66,10 +58,6 @@
 (use-package undo-fu)
 (use-package undo-fu-session
   :config (undo-fu-session-global-mode))
-(use-package vertico
-  :init
-  (vertico-mode)
-  (vertico-buffer-mode))
 (use-package vundo)
 
 ;;;; Settings
