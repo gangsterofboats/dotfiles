@@ -1,7 +1,7 @@
 ;;;; -*- lexical-binding: t -*-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs configuration -- init.el file                                      ;;
-;; Copyright (C) 2025 Michael Wiseman                                       ;;
+;; Copyright (C) 2026 Michael Wiseman                                       ;;
 ;;                                                                          ;;
 ;; This program is free software: you can redistribute it and/or modify it  ;;
 ;; under the terms of the GNU Affero General Public License as published by ;;
@@ -27,8 +27,7 @@
    doom-modeline-icon (display-graphic-p)
    doom-modeline-unicode-fallback t))
 (use-package ergoemacs-mode
- :config
- (ergoemacs-mode t))
+ :config (ergoemacs-mode t))
 (use-package expand-region
   :bind ("C-," . er/expand-region))
 (use-package gnu-elpa-keyring-update)
@@ -74,6 +73,15 @@
  undo-strong-limit 268435456 ; 2^28
  undo-outer-limit 1073741824 ; 2^30
  version-control t)
+
+;;; Calendar settings
+(setq
+ calendar-date-style 'iso
+ calendar-mark-holidays-flag t
+ calendar-latitude 44.6
+ calendar-location-name "Corvallis, OR"
+ calendar-longitude -123.3
+ calendar-week-start-day 1)
 
 ;;; Ensure UTF-8 usage
 (prefer-coding-system 'utf-8-unix)
