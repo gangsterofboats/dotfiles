@@ -27,7 +27,7 @@
    doom-modeline-icon (display-graphic-p)
    doom-modeline-unicode-fallback t))
 (use-package ergoemacs-mode
- :config (ergoemacs-mode t))
+  :config (ergoemacs-mode t))
 (use-package expand-region
   :bind ("C-," . er/expand-region))
 (use-package gnu-elpa-keyring-update)
