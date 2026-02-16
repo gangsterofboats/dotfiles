@@ -1,6 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Vim configuration -- vimrc file                                          ""
-"" Copyright (C) 2025 Michael Wiseman                                       ""
+"" Copyright (C) 2026 Michael Wiseman                                       ""
 ""                                                                          ""
 "" This program is free software: you can redistribute it and/or modify it  ""
 "" under the terms of the GNU Affero General Public License as published by ""
@@ -21,7 +21,7 @@ set nocompatible
 set cpoptions=""
 
 """" Packages
-call plug#begin(expand('~/.vim/plugged'))
+call plug#begin(expand('~/.local/share/vim/plugged'))
 
 """ Vim-Plug itself
 Plug 'junegunn/vim-plug'
@@ -69,9 +69,9 @@ call plug#end()
 """" Settings
 
 """ Backup file settings
-execute 'set backupdir^=' . expand('~/.vim/.backup//')
-execute 'set directory^=' . expand('~/.vim/.swp//')
-execute 'set undodir^=' . expand('~/.vim/.undo//')
+execute 'set backupdir^=' . expand('~/.local/share/vim/backup//')
+execute 'set directory^=' . expand('~/.local/share/vim/swp//')
+execute 'set undodir^=' . expand('~/.local/share/vim/undo//')
 set backup
 set undofile
 
@@ -111,7 +111,7 @@ set autochdir
 set browsedir=buffer
 
 """ Move viminfo file
-set viminfo+=n~/.vim/viminfo
+set viminfo+=n~/.local/share/vim/viminfo
 
 """ Netrw settings
 let g:netrw_altv          = 1
