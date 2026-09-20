@@ -188,5 +188,8 @@
 
 ;;;; Final settings
 
+;;; Temporary Mac fix
+(setenv "MACOSX_DEPLOYMENT_TARGET" "27.0")
+
 ;;; Initial scratch mode
 (setq-default initial-major-mode #'fundamental-mode)
